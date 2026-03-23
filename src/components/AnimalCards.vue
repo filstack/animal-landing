@@ -72,7 +72,7 @@ function scrollRight() {
             <button
               @click="scrollLeft"
               :disabled="scrollOffset === 0"
-              class="size-[32px] rounded-[24px] border border-white flex items-center justify-center
+              class="size-[32px] 2xl:size-[40px] rounded-[24px] 2xl:rounded-[30px] border border-white flex items-center justify-center
                      disabled:opacity-30 hover:bg-white/10 transition-colors bg-black/30"
               aria-label="Назад"
             >
@@ -83,7 +83,7 @@ function scrollRight() {
             <button
               @click="scrollRight"
               :disabled="scrollOffset >= cards.length - 2"
-              class="size-[32px] rounded-[24px] border border-white flex items-center justify-center
+              class="size-[32px] 2xl:size-[40px] rounded-[24px] 2xl:rounded-[30px] border border-white flex items-center justify-center
                      disabled:opacity-30 hover:bg-white/10 transition-colors bg-black/30"
               aria-label="Вперёд"
             >

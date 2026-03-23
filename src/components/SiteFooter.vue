@@ -39,11 +39,11 @@ import iconOk from '@/assets/icons/social/ok.svg'
           <div class="flex items-center gap-[24px] md:gap-[30px]">
             <a href="https://agencytde.ru/" target="_blank" rel="noopener">
               <img :src="partnerAtre" alt="АТРЭ"
-                class="h-[32px] w-[66px] md:h-[40px] md:w-[83px] brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
+                class="h-[32px] w-[66px] md:h-[40px] md:w-[83px] 2xl:h-[48px] 2xl:w-[100px] brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
             </a>
             <a href="https://xn--80afcdbalict6afooklqi5o.xn--p1ai/" target="_blank" rel="noopener">
               <img :src="partnerFond" alt="Фонд президентских грантов"
-                class="h-[32px] w-[76px] md:h-[40px] md:w-[95px] brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
+                class="h-[32px] w-[76px] md:h-[40px] md:w-[95px] 2xl:h-[48px] 2xl:w-[114px] brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
             </a>
           </div>
         </div>
@@ -59,7 +59,7 @@ import iconOk from '@/assets/icons/social/ok.svg'
 
       <!-- Legal -->
       <p class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]
-                font-body text-[#5d5d5d] font-extrabold
+                font-body text-[#5d5d5d] font-normal
                 text-[11px] leading-[13px]
                 md:text-[13px] md:leading-[15.7px]
                 2xl:text-[14px] 2xl:leading-[16.9px]">
@@ -75,7 +75,8 @@ import iconOk from '@/assets/icons/social/ok.svg'
       <!-- Social: Desktop 30x30 gap-20, Mobile 24x24 gap-16 -->
       <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]
                   flex items-center gap-[16px] md:gap-[20px]">
-        <a href="https://vk.com/sto_vidov" target="_blank" rel="noopener" aria-label="ВКонтакте чат"
+        <!-- MAX (URL не указан в ТЗ) -->
+        <a href="#" target="_blank" rel="noopener" aria-label="MAX"
            class="size-[24px] md:size-[30px] shrink-0">
           <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
         </a>

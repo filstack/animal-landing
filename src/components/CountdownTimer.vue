@@ -9,14 +9,10 @@ const now = ref(Date.now())
 let interval: ReturnType<typeof setInterval>
 
 onMounted(() => {
-  interval = setInterval(() => {
-    now.value = Date.now()
-  }, 1000)
+  interval = setInterval(() => { now.value = Date.now() }, 1000)
 })
 
-onUnmounted(() => {
-  clearInterval(interval)
-})
+onUnmounted(() => { clearInterval(interval) })
 
 const timeLeft = computed(() => {
   if (!props.targetDate) return { days: '00', hours: '00', minutes: '00' }
@@ -33,30 +29,27 @@ const timeLeft = computed(() => {
 </script>
 
 <template>
-  <!--
-    Figma timer sizes:
-    320: 52px centered, label 12px/14px
-    360: 52px centered, label 12px/14px
-    480: 64px centered, label 14px/17px
-    768+: right-aligned, grows with breakpoint
-    1280: 114px, label 16px/18px
-  -->
-  <div class="flex flex-col gap-[4px] items-start justify-center
+  <!-- Figma 1680: Timer w=480, gap=4, label 18px/22lh left-aligned, timer 114px/102.6lh #fa0 -->
+  <div class="flex flex-col gap-[4px] justify-center
               text-center w-full py-[20px]
-              md:text-right md:w-auto md:py-0">
+              md:text-left md:w-[480px] md:py-0">
     <p class="font-heading text-white font-normal w-full
               text-[12px] leading-[14px]
               sm:text-[14px] sm:leading-[17px]
-              md:text-[16px] md:leading-[18px] md:indent-[6px]">
+              md:text-[16px] md:leading-[18px]
+              2xl:text-[18px] 2xl:leading-[22px]">
       До старта голосования
     </p>
-    <p class="font-heading text-[#fa0] w-full
-              text-[52px] leading-[52px]
-              sm:text-[64px] sm:leading-[64px]
-              md:text-[80px] md:leading-[0.9]
-              lg:text-[90px]
-              xl:text-[114px]">
-      {{ timeLeft.days }}:{{ timeLeft.hours }}:{{ timeLeft.minutes }}
-    </p>
+    <!-- Timer with day/hour/min labels for clarity -->
+    <div class="font-heading text-[#ffaa00] w-full
+                text-[52px] leading-[52px]
+                sm:text-[64px] sm:leading-[64px]
+                md:text-[80px] md:leading-[0.9]
+                lg:text-[90px]
+                xl:text-[114px] xl:leading-[102.6px]">
+      <span>{{ timeLeft.days }}</span><span class="text-[0.35em] text-white/40 align-super">дн</span>
+      <span> : {{ timeLeft.hours }}</span><span class="text-[0.35em] text-white/40 align-super">ч</span>
+      <span> : {{ timeLeft.minutes }}</span><span class="text-[0.35em] text-white/40 align-super">м</span>
+    </div>
   </div>
 </template>

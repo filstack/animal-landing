@@ -17,28 +17,24 @@ function handleSubmit() {
 </script>
 
 <template>
-  <!-- Desktop: w-420, p-20, gap-20, rounded-18, border #404040 0.5px, backdrop-blur-23px -->
-  <!-- Mobile: full width, gap-16, p-20, border 0.3px -->
+  <!-- Figma: 1280 w=420, 1680 w=480, p=20, gap=20, rounded-18, border #404040 0.5px -->
   <form
     @submit.prevent="handleSubmit"
     class="backdrop-blur-[23px] bg-gradient-to-r from-[rgba(122,122,122,0.14)] to-[rgba(115,115,115,0)]
-           border-solid border-[#404040]
-           border-[0.3px] sm:border-[0.5px]
-           rounded-[18px]
-           p-[20px]
-           flex flex-col
-           gap-[16px] sm:gap-[20px]
-           w-full sm:w-[420px]"
+           border-solid border-[#404040] border-[0.3px] sm:border-[0.5px]
+           rounded-[18px] p-[20px]
+           flex flex-col gap-[16px] sm:gap-[20px]
+           w-full sm:w-[420px] 2xl:w-[480px]"
   >
-    <!-- Label: Desktop 16px/18px, Mobile 12px/14px -->
-    <p class="font-heading text-white font-normal
+    <!-- Label: Figma 1680=18px/22lh, 1280=16px/18lh, mobile=12px/14lh -->
+    <p class="font-heading text-white font-normal whitespace-nowrap
               text-[12px] leading-[14px]
               sm:text-[16px] sm:leading-[18px]
-              whitespace-nowrap">
+              2xl:text-[18px] 2xl:leading-[22px]">
       Мы напомним о старте голосования
     </p>
 
-    <!-- Input: Desktop h-52 pl-30 pr-20 py-10 text-18/24, Mobile h-44 px-20 text-15/18 -->
+    <!-- Input: Figma 1680=440x52 pl-30 pr-20, Inter w300 18px/24lh -->
     <div class="relative">
       <input
         v-model="email"
@@ -46,7 +42,7 @@ function handleSubmit() {
         placeholder="Email"
         required
         class="w-full backdrop-blur-[23px]
-               h-[44px] sm:h-auto
+               h-[44px] sm:h-[52px]
                border-solid border-[#b6b6b6] border-[0.5px]
                rounded-[99px] bg-transparent
                px-[20px] py-[10px] sm:pl-[30px] sm:pr-[20px]
@@ -68,31 +64,25 @@ function handleSubmit() {
       </button>
     </div>
 
-    <!-- Checkboxes: 14x14, rounded-2, border #b6b6b6 0.3px, text 10px/13px #b6b6b6, gap-8 -->
-    <!-- Gap between checkboxes: Desktop 15px, Mobile 12px -->
+    <!-- Checkboxes: Figma 1680=12px/14lh, 1280=10px/13lh, gap=15 desktop, 12 mobile -->
     <div class="flex flex-col gap-[12px] sm:gap-[15px]">
-      <!-- Checkbox 1: policy (required) -->
       <label class="flex gap-[8px] items-start cursor-pointer">
-        <input
-          v-model="agreedPolicy"
-          type="checkbox"
-          class="mt-px w-[14px] h-[14px] shrink-0 rounded-[2px] border-[0.3px] border-[#b6b6b6] accent-green"
-        />
-        <span class="font-body-tight text-[#b6b6b6] text-[10px] leading-[13px] font-normal">
+        <input v-model="agreedPolicy" type="checkbox"
+          class="mt-px w-[14px] h-[14px] shrink-0 rounded-[2px] border-[0.3px] border-[#b6b6b6] accent-green" />
+        <span class="font-body-tight text-[#b5b5b5] font-normal
+                     text-[10px] leading-[13px]
+                     2xl:text-[12px] 2xl:leading-[14px]">
           Соглашаюсь с&nbsp;<a href="#" class="underline">политикой обработки персональных данных</a>
           и&nbsp;даю согласие на&nbsp;обработку персональных данных. Я&nbsp;принимаю условия
           <a href="#" class="underline">соглашения</a> и&nbsp;<a href="#" class="underline">политику конфиденциальности</a>
         </span>
       </label>
-
-      <!-- Checkbox 2: news (optional) -->
       <label class="flex gap-[8px] items-start cursor-pointer">
-        <input
-          v-model="agreedNews"
-          type="checkbox"
-          class="mt-px w-[14px] h-[14px] shrink-0 rounded-[2px] border-[0.3px] border-[#b6b6b6] accent-green"
-        />
-        <span class="font-body-tight text-[#b6b6b6] text-[10px] leading-[13px] font-normal">
+        <input v-model="agreedNews" type="checkbox"
+          class="mt-px w-[14px] h-[14px] shrink-0 rounded-[2px] border-[0.3px] border-[#b6b6b6] accent-green" />
+        <span class="font-body-tight text-[#b5b5b5] font-normal
+                     text-[10px] leading-[13px]
+                     2xl:text-[12px] 2xl:leading-[14px]">
           Хочу получать новости и&nbsp;обновления проекта на&nbsp;почту (отписаться можно в&nbsp;любой момент)
         </span>
       </label>
