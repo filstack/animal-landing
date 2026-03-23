@@ -14,12 +14,13 @@ onMounted(() => {
 onUnmounted(() => { clearInterval(interval) })
 
 const timeLeft = computed(() => {
-  if (!props.targetDate) return { days: '00', hours: '00', minutes: '00' }
+  if (!props.targetDate) return { days: '00', hours: '00', minutes: '00', seconds: '00' }
   const diff = Math.max(0, new Date(props.targetDate).getTime() - now.value)
   return {
     days: String(Math.floor(diff / 86400000)).padStart(2, '0'),
     hours: String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0'),
     minutes: String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0'),
+    seconds: String(Math.floor((diff % 60000) / 1000)).padStart(2, '0'),
   }
 })
 </script>
@@ -35,13 +36,22 @@ const timeLeft = computed(() => {
               2xl:text-[18px] 2xl:leading-[22px]">
       До старта голосования
     </p>
+    <!-- Mobile: DD д : HH ч : MM м : SS с (smaller). Desktop: same but bigger -->
     <div class="font-heading text-[#ffaa00] w-full whitespace-nowrap
-                text-[52px] leading-[52px]
-                sm:text-[64px] sm:leading-[64px]
-                md:text-[80px] md:leading-[0.9]
-                lg:text-[90px]
-                xl:text-[114px] xl:leading-[102.6px]">
-      {{ timeLeft.days }}<span class="text-[0.3em] text-white/40 align-super mr-[0.05em]">д</span>:{{ timeLeft.hours }}<span class="text-[0.3em] text-white/40 align-super mr-[0.05em]">ч</span>:{{ timeLeft.minutes }}<span class="text-[0.3em] text-white/40 align-super">м</span>
+                text-[36px] leading-[40px]
+                xs:text-[42px] xs:leading-[46px]
+                sm:text-[52px] sm:leading-[56px]
+                md:text-[64px] md:leading-[0.9]
+                lg:text-[80px]
+                xl:text-[100px] xl:leading-[0.9]
+                2xl:text-[114px] 2xl:leading-[102.6px]">
+      <span>{{ timeLeft.days }}</span><sup class="text-[0.28em] text-white/40">д</sup>
+      <span>:</span>
+      <span>{{ timeLeft.hours }}</span><sup class="text-[0.28em] text-white/40">ч</sup>
+      <span>:</span>
+      <span>{{ timeLeft.minutes }}</span><sup class="text-[0.28em] text-white/40">м</sup>
+      <span>:</span>
+      <span>{{ timeLeft.seconds }}</span><sup class="text-[0.28em] text-white/40">с</sup>
     </div>
   </div>
 </template>
