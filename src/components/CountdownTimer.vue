@@ -33,21 +33,27 @@ const timeLeft = computed(() => {
 </script>
 
 <template>
-  <!-- Desktop: right-aligned, 114px #fa0, label 16px/18px indent-6 -->
-  <!-- Mobile: centered, 52px, label 12px/14px -->
+  <!--
+    Figma timer sizes:
+    320: 52px centered, label 12px/14px
+    360: 52px centered, label 12px/14px
+    480: 64px centered, label 14px/17px
+    768+: right-aligned, grows with breakpoint
+    1280: 114px, label 16px/18px
+  -->
   <div class="flex flex-col gap-[4px] items-start justify-center
-              text-center w-full
-              sm:text-right sm:w-auto
-              py-[20px] sm:py-0">
+              text-center w-full py-[20px]
+              md:text-right md:w-auto md:py-0">
     <p class="font-heading text-white font-normal w-full
               text-[12px] leading-[14px]
-              sm:text-[16px] sm:leading-[18px] sm:indent-[6px]">
+              sm:text-[14px] sm:leading-[17px]
+              md:text-[16px] md:leading-[18px] md:indent-[6px]">
       До старта голосования
     </p>
     <p class="font-heading text-[#fa0] w-full
-              text-[52px] leading-none
-              sm:text-[60px] sm:leading-[0.9]
-              md:text-[80px]
+              text-[52px] leading-[52px]
+              sm:text-[64px] sm:leading-[64px]
+              md:text-[80px] md:leading-[0.9]
               lg:text-[90px]
               xl:text-[114px]">
       {{ timeLeft.days }}:{{ timeLeft.hours }}:{{ timeLeft.minutes }}

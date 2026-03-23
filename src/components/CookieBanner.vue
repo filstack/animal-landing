@@ -22,35 +22,27 @@ function accept() {
     leave-active-class="transition-all duration-200 ease-in"
     leave-to-class="translate-y-full opacity-0"
   >
-    <div
-      v-if="visible"
-      class="fixed bottom-[20px] left-[20px] right-[20px] sm:left-auto sm:right-[20px] z-50
-             sm:max-w-[420px]
-             backdrop-blur-[23px] bg-gradient-to-r from-[rgba(122,122,122,0.14)] to-[rgba(115,115,115,0)]
-             border-solid border-[#404040] border-[0.5px]
-             rounded-[18px]
-             p-[20px]
-             flex flex-col gap-[16px]"
-    >
-      <p class="font-body text-[#b6b6b6] text-[12px] leading-[16px] sm:text-[13px] sm:leading-[17px]">
-        Мы используем файлы cookie для персонализации контента и&nbsp;рекламы, предоставления функций социальных сетей
-        и&nbsp;анализа нашего трафика.
-      </p>
-      <div class="flex gap-[8px]">
+    <!-- Figma: 1105x91, rounded-88, px-60 py-20, gap-30, Fira Sans 400 14px, button rounded-40 136x48 -->
+    <div v-if="visible" class="fixed bottom-[20px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-16px)] sm:w-[calc(100%-40px)] max-w-[1105px]">
+      <div class="bg-[#1a1a1a]/95 backdrop-blur-[23px] border border-[#404040]/50
+                  rounded-[24px] sm:rounded-[88px]
+                  px-[20px] py-[16px] sm:px-[60px] sm:py-[20px]
+                  flex flex-col sm:flex-row sm:items-center gap-[16px] sm:gap-[30px]">
+        <p class="flex-1 text-[#b6b6b6] text-[12px] sm:text-[14px] leading-[16px] sm:leading-[17px]" style="font-family: 'Fira Sans', 'Inter', sans-serif;">
+          На нашем сайте используются cookie-файлы и&nbsp;технологии персонализации.
+          Продолжая пользоваться данным сайтом, вы&nbsp;подтверждаете свое согласие на&nbsp;использование
+          файлов cookie и&nbsp;технологий персонализации в&nbsp;соответствии
+          с&nbsp;<a href="https://www.vedomosti.ru/info/privacy" class="underline" target="_blank" rel="noopener">Политикой в&nbsp;отношении обработки персональных данных</a>.
+        </p>
         <button
           @click="accept"
-          class="h-[36px] px-[20px] rounded-[99px] bg-[#748c43] font-heading text-white text-[13px] font-medium
+          class="shrink-0 self-start sm:self-auto
+                 h-[40px] sm:h-[48px] px-[24px] sm:px-[40px]
+                 rounded-[40px] bg-[#748c43]
+                 font-heading text-white text-[13px] sm:text-[14px] font-medium
                  hover:bg-[#748c43]/80 active:scale-95 transition-all whitespace-nowrap"
         >
-          Принять все
-        </button>
-        <button
-          @click="accept"
-          class="h-[36px] px-[20px] rounded-[99px] border border-[#b6b6b6] border-[0.5px] bg-transparent
-                 font-heading text-white text-[13px] font-medium
-                 hover:bg-white/10 active:scale-95 transition-all whitespace-nowrap"
-        >
-          Настройки
+          Принять
         </button>
       </div>
     </div>

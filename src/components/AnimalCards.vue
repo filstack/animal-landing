@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import AnimalCard from './AnimalCard.vue'
 
 export interface CardItem {
@@ -21,47 +21,69 @@ onMounted(() => {
   setTimeout(() => { loading.value = false }, 1500)
 })
 
+// Visible count depends on breakpoint — handled via CSS, but for slice we use max
+const visibleCards = computed(() => props.cards.slice(scrollOffset.value, scrollOffset.value + 4))
+
 function scrollLeft() {
   if (scrollOffset.value > 0) scrollOffset.value--
 }
 function scrollRight() {
-  if (scrollOffset.value < props.cards.length - 3) scrollOffset.value++
+  if (scrollOffset.value < props.cards.length - 1) scrollOffset.value++
 }
 </script>
 
 <template>
-  <!-- Desktop: 3 cards visible, gap-8, navigation arrows. Mobile: vertical stack, gap-8 -->
+  <!--
+    Figma breakpoints for cards:
+    320: vertical, w-304, h-210, gap-8, px-8
+    360: vertical, full width, h-220, gap-8, px-8
+    480: vertical, w-400, h-220, gap-8, px-40
+    768: horizontal 2 cards, w-340 h-196, gap-8
+    1024: horizontal 3 cards, w-300 h-196, gap-8
+    1280: horizontal 3 cards, w-364 h-226, gap-8
+    1680: horizontal 4 cards, w-374 h-240, gap-8
+  -->
   <div class="relative">
-    <!-- Loader -->
     <div v-if="loading" class="flex justify-center py-12">
       <div class="dots-loader" />
     </div>
 
     <Transition enter-active-class="transition-opacity duration-500" enter-from-class="opacity-0">
       <div v-if="!loading">
-        <!-- Mobile: vertical stack -->
-        <div class="flex flex-col gap-[8px] sm:hidden px-0">
-          <AnimalCard v-for="(card, i) in cards" :key="i" v-bind="card" class="w-full" />
+        <!-- Mobile ≤767: vertical stack -->
+        <div class="flex flex-col gap-[8px] md:hidden">
+          <AnimalCard
+            v-for="(card, i) in cards"
+            :key="'m'+i"
+            v-bind="card"
+            class="w-full h-[210px] xs:h-[220px]"
+          />
         </div>
 
-        <!-- Desktop: horizontal slider, 3 visible -->
-        <div class="hidden sm:block relative">
+        <!-- Tablet/Desktop ≥768: horizontal with arrows -->
+        <div class="hidden md:block relative">
           <div class="flex gap-[8px] overflow-hidden">
             <AnimalCard
-              v-for="(card, i) in cards.slice(scrollOffset, scrollOffset + 3)"
+              v-for="(card, i) in visibleCards"
               :key="scrollOffset + i"
               v-bind="card"
-              class="w-[364px] shrink-0"
+              class="shrink-0
+                     w-[340px] h-[196px]
+                     lg:w-[300px] lg:h-[196px]
+                     xl:w-[364px] xl:h-[226px]
+                     2xl:w-[374px] 2xl:h-[240px]"
             />
           </div>
 
-          <!-- Navigation arrows: 32x32, border white, rounded-24 -->
-          <div class="absolute top-1/2 -translate-y-1/2 flex items-center justify-between w-[calc(100%+100px)] -left-[50px]">
+          <!-- Navigation arrows -->
+          <div class="absolute top-1/2 -translate-y-1/2 flex items-center justify-between
+                      w-[calc(100%+80px)] -left-[40px]
+                      xl:w-[calc(100%+100px)] xl:-left-[50px]">
             <button
               @click="scrollLeft"
               :disabled="scrollOffset === 0"
               class="size-[32px] rounded-[24px] border border-white flex items-center justify-center
-                     disabled:opacity-30 hover:bg-white/10 transition-colors"
+                     disabled:opacity-30 hover:bg-white/10 transition-colors bg-black/30"
               aria-label="Назад"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -70,9 +92,9 @@ function scrollRight() {
             </button>
             <button
               @click="scrollRight"
-              :disabled="scrollOffset >= cards.length - 3"
+              :disabled="scrollOffset >= cards.length - 2"
               class="size-[32px] rounded-[24px] border border-white flex items-center justify-center
-                     disabled:opacity-30 hover:bg-white/10 transition-colors"
+                     disabled:opacity-30 hover:bg-white/10 transition-colors bg-black/30"
               aria-label="Вперёд"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
