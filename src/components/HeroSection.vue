@@ -39,7 +39,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
     <!-- Background -->
     <div class="absolute inset-0 z-0">
       <img :src="bgDesktop" alt="" class="w-full h-full object-cover object-[70%_center] hidden sm:block" />
-      <img :src="bgMobile || bgDesktop" alt="" class="w-full h-full object-cover object-[center_30%] sm:hidden" />
+      <img :src="bgMobile || bgDesktop" alt="" class="w-full h-full object-cover object-center sm:hidden" />
       <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
       <div class="absolute inset-0 bg-gradient-to-t from-[#1e1e1e] via-[#1e1e1e]/40 to-transparent sm:via-[#1e1e1e]/20" />
     </div>
