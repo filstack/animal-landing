@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import SiteHeader from './components/SiteHeader.vue'
 import HeroSection from './components/HeroSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import CookieBanner from './components/CookieBanner.vue'
-import SuccessMessage from './components/SuccessMessage.vue'
 import type { CardItem } from './components/AnimalCards.vue'
 
 import bearDesktop from './assets/bg/bear-desktop.jpg'
@@ -21,10 +19,8 @@ const themes = [
 ]
 const theme = themes[Math.floor(Math.random() * themes.length)]
 
-const showSuccess = ref(false)
-
 function handleFormSubmit(_payload: { email: string; subscribedToNews: boolean }) {
-  showSuccess.value = true
+  // TODO: CRM-Битрикс integration
 }
 
 const cards: CardItem[] = [
@@ -70,8 +66,6 @@ const cards: CardItem[] = [
     </main>
 
     <SiteFooter />
-
     <CookieBanner />
-    <SuccessMessage :visible="showSuccess" @close="showSuccess = false" />
   </div>
 </template>

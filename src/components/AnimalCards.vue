@@ -21,7 +21,6 @@ onMounted(() => {
   setTimeout(() => { loading.value = false }, 1500)
 })
 
-// Visible count depends on breakpoint — handled via CSS, but for slice we use max
 const visibleCards = computed(() => props.cards.slice(scrollOffset.value, scrollOffset.value + 4))
 
 function scrollLeft() {
@@ -33,16 +32,6 @@ function scrollRight() {
 </script>
 
 <template>
-  <!--
-    Figma breakpoints for cards:
-    320: vertical, w-304, h-210, gap-8, px-8
-    360: vertical, full width, h-220, gap-8, px-8
-    480: vertical, w-400, h-220, gap-8, px-40
-    768: horizontal 2 cards, w-340 h-196, gap-8
-    1024: horizontal 3 cards, w-300 h-196, gap-8
-    1280: horizontal 3 cards, w-364 h-226, gap-8
-    1680: horizontal 4 cards, w-374 h-240, gap-8
-  -->
   <div class="relative">
     <div v-if="loading" class="flex justify-center py-12">
       <div class="dots-loader" />
@@ -50,12 +39,13 @@ function scrollRight() {
 
     <Transition enter-active-class="transition-opacity duration-500" enter-from-class="opacity-0">
       <div v-if="!loading">
-        <!-- Mobile ≤767: vertical stack -->
+        <!-- Mobile ≤767: vertical stack, alternating with/without image (Figma pattern) -->
         <div class="flex flex-col gap-[8px] md:hidden">
           <AnimalCard
             v-for="(card, i) in cards"
             :key="'m'+i"
             v-bind="card"
+            :show-image="i % 2 === 0"
             class="w-full h-[210px] xs:h-[220px]"
           />
         </div>

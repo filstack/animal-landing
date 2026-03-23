@@ -5,12 +5,11 @@ defineProps<{
   date: string
   readTime: string
   href?: string
+  showImage?: boolean
 }>()
 </script>
 
 <template>
-  <!-- Desktop: w-364 h-226, rounded-18, px-16 py-30, gap-20, border #404040 0.5px, backdrop-blur-23 -->
-  <!-- Mobile: full width, h-220, same padding -->
   <a
     :href="href || '#'"
     class="group block
@@ -19,18 +18,15 @@ defineProps<{
            rounded-[18px] overflow-hidden
            flex flex-col gap-[20px]
            px-[16px] py-[30px]
-           h-[220px] sm:h-[226px]
            hover:from-[rgba(122,122,122,0.25)] transition-all duration-300"
   >
-    <!-- Top: text + image -->
+    <!-- Top: text + optional image -->
     <div class="flex-1 flex flex-col min-h-0">
       <div class="flex-1 flex gap-[16px] items-start min-h-0">
-        <!-- Card title: Exo 2 Medium 16px/18px white -->
         <p class="flex-1 font-heading text-white font-medium text-[16px] leading-[18px] min-h-0 line-clamp-6">
           {{ title }}
         </p>
-        <!-- Card image: 160x108 rounded-16 -->
-        <div class="shrink-0 w-[160px] h-[108px] rounded-[16px] overflow-hidden">
+        <div v-if="showImage !== false" class="shrink-0 w-[160px] h-[108px] rounded-[16px] overflow-hidden">
           <img
             :src="image"
             :alt="title"
@@ -42,11 +38,9 @@ defineProps<{
 
     <!-- Bottom: date + green icon -->
     <div class="flex items-center justify-between shrink-0">
-      <!-- Inter Regular 12px/14px #807974 -->
       <span class="font-body text-[#807974] text-[12px] leading-[14px] font-normal whitespace-nowrap">
         {{ date }}
       </span>
-      <!-- Green circle: 32x32, bg #748c43, rounded-24, p-6 -->
       <div class="bg-[#748c43] rounded-[24px] p-[6px] size-[32px] flex items-center justify-center shrink-0">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="w-[24px] h-[24px]">
           <path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import EmailForm from './EmailForm.vue'
 import CountdownTimer from './CountdownTimer.vue'
 import AnimalCards from './AnimalCards.vue'
@@ -11,9 +12,16 @@ defineProps<{
   cards: CardItem[]
 }>()
 
-defineEmits<{
+const emit = defineEmits<{
   formSubmit: [payload: { email: string; subscribedToNews: boolean }]
 }>()
+
+const submitted = ref(false)
+
+function handleFormSubmit(payload: { email: string; subscribedToNews: boolean }) {
+  emit('formSubmit', payload)
+  submitted.value = true
+}
 </script>
 
 <template>
@@ -85,9 +93,35 @@ defineEmits<{
                       xl:text-[24px] xl:leading-[30px]">Эксперты отобрали редкие виды. <br />Теперь выбор за нами</p>
           </div>
 
-          <!-- Form + Timer -->
+          <!-- Form / Success + Timer -->
           <div class="flex flex-col md:flex-row md:items-start md:justify-between w-full">
-            <EmailForm @submit="$emit('formSubmit', $event)" />
+            <!-- Form or Success message (replaces form after submit) -->
+            <Transition
+              enter-active-class="transition-opacity duration-300"
+              enter-from-class="opacity-0"
+              leave-active-class="transition-opacity duration-200"
+              leave-to-class="opacity-0"
+              mode="out-in"
+            >
+              <EmailForm v-if="!submitted" @submit="handleFormSubmit" />
+              <!-- Success: same glassmorphism card as form, replaces it -->
+              <div v-else
+                class="backdrop-blur-[23px] bg-gradient-to-r from-[rgba(122,122,122,0.14)] to-[rgba(115,115,115,0)]
+                       border-solid border-[#404040] border-[0.3px] sm:border-[0.5px]
+                       rounded-[18px] p-[20px] sm:p-[30px]
+                       w-full sm:w-[420px]
+                       flex flex-col items-center gap-[16px] text-center">
+                <div class="size-[48px] rounded-full bg-[#748c43]/20 flex items-center justify-center">
+                  <svg class="size-[24px]" viewBox="0 0 24 24" fill="none" stroke="#748c43" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <p class="font-heading text-white text-[20px] sm:text-[24px] font-bold leading-[24px] sm:leading-[28px]">Спасибо!</p>
+                <p class="font-body text-[#b6b6b6] text-[13px] sm:text-[14px] leading-[17px]">
+                  Мы&nbsp;напомним вам о&nbsp;старте голосования на&nbsp;указанную почту.
+                </p>
+              </div>
+            </Transition>
             <div class="hidden md:flex md:items-end md:self-stretch">
               <CountdownTimer :target-date="targetDate" />
             </div>
