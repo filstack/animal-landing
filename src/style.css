@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;700;800&family=Inter+Tight:wght@300;400;500&display=swap');
+@import 'tailwindcss';
+
+/* === Design Tokens from Figma === */
+
+@theme {
+  /* Colors */
+  --color-dark-gray: #1e1e1e;
+  --color-footer-bg: #0f0f0f;
+  --color-green: #748c43;
+  --color-yellow: #ffaa00;
+  --color-red: #e74c3c;
+  --color-white: #ffffff;
+  --color-muted: #999999;
+  --color-muted-dark: #5d5d5d;
+  --color-card-date: #807974;
+  --color-input-border: #b5b5b5;
+
+  /* Fonts */
+  --font-heading: 'Exo 2', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-body-tight: 'Inter Tight', sans-serif;
+
+  /* Breakpoints (mobile-first) */
+  --breakpoint-xs: 360px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1680px;
+}
+
+/* Base reset */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
