@@ -24,11 +24,13 @@ defineProps<{
            transition-all duration-300 cursor-pointer"
   >
     <!-- Top: text + optional image -->
-    <div class="flex-1 flex flex-col min-h-0">
+    <div class="flex-1 flex flex-col min-h-0 pointer-events-none">
       <div class="flex-1 flex gap-[16px] items-start min-h-0">
         <!-- Figma 1680: Exo 2 Medium 18px/20lh. 1280: 16px/18lh -->
-        <p class="flex-1 font-heading text-white font-medium min-h-0 line-clamp-6
+        <p class="flex-1 font-heading text-white font-medium min-h-0 line-clamp-6 pointer-events-none
                   text-[16px] leading-[18px]
+                  md:text-[14px] md:leading-[17px]
+                  xl:text-[16px] xl:leading-[18px]
                   2xl:text-[18px] 2xl:leading-[20px]">
           {{ title }}
         </p>
@@ -40,7 +42,7 @@ defineProps<{
     </div>
 
     <!-- Bottom: date + green icon -->
-    <div class="flex items-center justify-between shrink-0">
+    <div class="flex items-center justify-between shrink-0 pointer-events-none">
       <!-- Figma 1680: Inter w400 14px/17lh #807974. 1280: 12px/14lh -->
       <span class="font-body text-[#807974] font-normal whitespace-nowrap
                    text-[12px] leading-[14px]

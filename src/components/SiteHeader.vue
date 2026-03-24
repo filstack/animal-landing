@@ -7,7 +7,7 @@ import logoSvg from '@/assets/logos/vedomosti.svg'
   <header class="absolute top-0 left-0 w-full z-30">
     <div class="px-[20px] py-[28px]
                 sm:px-[40px] sm:py-[32px]
-                lg:px-[54px]
+                lg:px-[60px]
                 xl:px-0 xl:py-[36px]
                 2xl:py-[40px]
                 xl:flex xl:justify-center">

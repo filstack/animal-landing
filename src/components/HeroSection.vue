@@ -43,11 +43,11 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
       <div class="flex flex-1 flex-col justify-end sm:justify-center
                   px-[20px] sm:px-[40px] lg:px-[54px] xl:px-0
                   sm:items-center
-                  pb-[20px] sm:pb-[40px] xl:pb-[60px]
+                  pb-[20px] sm:pb-[30px] xl:pb-[40px]
                   gap-[30px] sm:gap-[36px]">
 
         <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]
-                    flex flex-col gap-[30px] 2xl:gap-[46px]">
+                    flex flex-col gap-[30px] 2xl:gap-[36px]">
 
           <!-- Title block: Figma 1680 gap=40, 1280 gap=24 -->
           <div class="flex flex-col gap-[16px] xs:gap-[24px] 2xl:gap-[40px]
@@ -59,7 +59,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                         text-[38px] leading-[36px]
                         xs:text-[44px] xs:leading-[40px]
                         sm:text-[48px] sm:leading-[44px]
-                        md:text-[52px] md:leading-[48px]
+                        md:text-[54px] md:leading-[50px]
                         lg:text-[56px] lg:leading-[52px]
                         xl:text-[70px] xl:leading-[62px]
                         2xl:text-[84px] 2xl:leading-[70px]">Вместе <br />для дикой<br />природы</p>
@@ -68,12 +68,14 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                 <div class="bg-[#fa0] rounded-full flex items-center justify-center shrink-0
                             size-[30px] p-[6px]
                             xs:size-[36px] xs:p-[7.5px]
-                            sm:size-[48px] sm:p-[10px]
+                            md:size-[40px] md:p-[8.3px]
+                            xl:size-[48px] xl:p-[10px]
                             2xl:size-[54px] 2xl:p-[11.25px]">
                   <span class="font-body-tight font-semibold text-white whitespace-nowrap
                                text-[9px] leading-[8px]
                                xs:text-[10.5px] xs:leading-[9.4px]
-                               sm:text-[14px] sm:leading-[12.5px]
+                               md:text-[12px] md:leading-[10.5px]
+                               xl:text-[14px] xl:leading-[12.5px]
                                2xl:text-[16px] 2xl:leading-[14px]">скоро</span>
                 </div>
               </div>
@@ -97,25 +99,19 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
               mode="out-in"
             >
               <EmailForm v-if="!submitted" @submit="handleFormSubmit" />
+              <!-- Success: Figma = "Успешно! Мы напомним вам о...", Exo 2 w500 16px/20lh, white -->
               <div v-else
                 class="backdrop-blur-[23px] bg-gradient-to-r from-[rgba(122,122,122,0.14)] to-[rgba(115,115,115,0)]
                        border-solid border-[#404040] border-[0.3px] sm:border-[0.5px]
-                       rounded-[18px] p-[20px] sm:p-[30px]
-                       w-full sm:w-[420px] 2xl:w-[480px]
-                       flex flex-col items-center gap-[16px] text-center">
-                <div class="size-[48px] rounded-full bg-[#ffaa00]/20 flex items-center justify-center">
-                  <svg class="size-[24px]" viewBox="0 0 24 24" fill="none" stroke="#ffaa00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </div>
-                <p class="font-heading text-white text-[20px] sm:text-[24px] font-bold">Спасибо!</p>
-                <p class="font-body text-[#b6b6b6] text-[13px] sm:text-[14px] leading-[17px]">
-                  Мы&nbsp;напомним вам о&nbsp;старте голосования на&nbsp;указанную почту.
+                       rounded-[18px] p-[20px]
+                       w-full sm:w-[420px] 2xl:w-[480px]">
+                <p class="font-heading text-white font-medium text-[14px] leading-[18px] sm:text-[16px] sm:leading-[20px]">
+                  Успешно! Мы&nbsp;напомним вам о&nbsp;старте голосования на&nbsp;указанную почту.
                 </p>
               </div>
             </Transition>
             <!-- Timer: Figma 1680 w=480, aligned center vertically with form -->
-            <div class="hidden md:flex md:items-center md:flex-1 md:justify-end">
+            <div class="hidden md:flex md:items-center">
               <CountdownTimer :target-date="targetDate" />
             </div>
           </div>

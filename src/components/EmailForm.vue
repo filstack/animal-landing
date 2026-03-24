@@ -24,12 +24,13 @@ function handleSubmit() {
            border-solid border-[#404040] border-[0.3px] sm:border-[0.5px]
            rounded-[18px] p-[20px]
            flex flex-col gap-[16px] sm:gap-[20px]
-           w-full sm:w-[420px] 2xl:w-[480px]"
+           w-full md:w-[340px] xl:w-[420px] 2xl:w-[480px]"
   >
     <!-- Label: Figma 1680=18px/22lh, 1280=16px/18lh, mobile=12px/14lh -->
     <p class="font-heading text-white font-normal whitespace-nowrap
               text-[12px] leading-[14px]
-              sm:text-[16px] sm:leading-[18px]
+              md:text-[14px] md:leading-[17px]
+              xl:text-[16px] xl:leading-[18px]
               2xl:text-[18px] 2xl:leading-[22px]">
       Мы напомним о старте голосования
     </p>
@@ -42,12 +43,12 @@ function handleSubmit() {
         placeholder="Email"
         required
         class="w-full backdrop-blur-[23px]
-               h-[44px] sm:h-[52px]
+               h-[44px] xl:h-[52px]
                border-solid border-[#b6b6b6] border-[0.5px]
                rounded-[99px] bg-transparent
-               px-[20px] py-[10px] sm:pl-[30px] sm:pr-[20px]
+               px-[20px] py-[10px] xl:pl-[30px] xl:pr-[20px]
                font-body text-white font-light
-               text-[15px] leading-[18px] sm:text-[18px] sm:leading-[24px]
+               text-[15px] leading-[18px] xl:text-[18px] xl:leading-[24px]
                placeholder:text-white/60
                focus:outline-none focus:border-white transition-colors"
       />

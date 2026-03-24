@@ -30,15 +30,16 @@ const timeLeft = computed(() => {
     <p class="font-heading text-white font-normal w-full
               text-[12px] leading-[14px]
               sm:text-[14px] sm:leading-[17px]
-              md:text-[16px] md:leading-[18px]
+              md:text-[14px] md:leading-[17px]
+              xl:text-[16px] xl:leading-[18px]
               2xl:text-[18px] 2xl:leading-[22px]">
       До старта голосования
     </p>
     <p class="font-heading text-[#ffaa00] w-full whitespace-nowrap
               text-[52px] leading-[52px]
               sm:text-[64px] sm:leading-[64px]
-              md:text-[80px] md:leading-[0.9]
-              lg:text-[90px]
+              md:text-[76px] md:leading-[68.4px]
+              lg:text-[90px] lg:leading-[0.9]
               xl:text-[114px] xl:leading-[102.6px]">{{ timeLeft }}</p>
   </div>
 </template>
