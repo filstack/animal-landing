@@ -1,17 +1,18 @@
 <script setup lang="ts">
-defineProps<{
+withDefaults(defineProps<{
   image: string
   title: string
   date: string
   readTime: string
   href?: string
   showImage?: boolean
-}>()
+}>(), {
+  showImage: true
+})
 </script>
 
 <template>
-  <!-- Figma 1680: w-374 h-240, rounded-18, px-16 py-30, gap-20 -->
-  <!-- Title: Exo 2 w500 18px/20lh, Date: Inter w400 14px/17lh, Icon: 40x40 -->
+  <!-- Figma 1680: flex-1, h-240, rounded-18, px-16 py-30, gap-20 -->
   <a
     :href="href || '#'"
     class="group block
@@ -20,13 +21,13 @@ defineProps<{
            rounded-[18px] overflow-hidden
            flex flex-col gap-[20px]
            px-[16px] py-[24px] sm:py-[30px]
-           hover:border-white/40 hover:from-[rgba(122,122,122,0.25)]
+           hover:border-white
            transition-all duration-300 cursor-pointer"
   >
     <!-- Top: text + optional image -->
     <div class="flex-1 flex flex-col min-h-0 pointer-events-none">
       <div class="flex-1 flex gap-[16px] items-start min-h-0">
-        <!-- Figma 1680: Exo 2 Medium 18px/20lh. 1280: 16px/18lh -->
+        <!-- Figma 1680: Exo 2 Medium 18px/20lh -->
         <p class="flex-1 font-heading text-white font-medium min-h-0 line-clamp-6 pointer-events-none
                   text-[16px] leading-[18px]
                   md:text-[14px] md:leading-[17px]
@@ -43,13 +44,13 @@ defineProps<{
 
     <!-- Bottom: date + green icon -->
     <div class="flex items-center justify-between shrink-0 pointer-events-none">
-      <!-- Figma 1680: Inter w400 14px/17lh #807974. 1280: 12px/14lh -->
+      <!-- Figma 1680: Inter Regular 14px/17lh #807974 -->
       <span class="font-body text-[#807974] font-normal whitespace-nowrap
                    text-[12px] leading-[14px]
                    2xl:text-[14px] 2xl:leading-[17px]">
         {{ date }}
       </span>
-      <!-- Figma 1680: 40x40, p=7.5, r=30. 1280: 32x32, p=6, r=24 -->
+      <!-- Figma 1680: 40x40, p-7.5, r-30. 1280: 32x32, p-6, r-24 -->
       <div class="bg-[#748c43] flex items-center justify-center shrink-0
                   size-[32px] rounded-[24px] p-[6px]
                   2xl:size-[40px] 2xl:rounded-[30px] 2xl:p-[7.5px]">

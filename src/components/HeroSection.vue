@@ -17,8 +17,10 @@ const emit = defineEmits<{
 }>()
 
 const submitted = ref(false)
+const formError = ref('')
 
 function handleFormSubmit(payload: { email: string; subscribedToNews: boolean }) {
+  formError.value = ''
   emit('formSubmit', payload)
   submitted.value = true
 }
@@ -36,35 +38,38 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
     </div>
 
     <div class="relative z-10 flex flex-1 flex-col">
-      <!-- Header spacer: Figma 1680=110, 1280=98, 768=90, 480=84, 360=76 -->
+      <!-- Header spacer: Figma 1680 = py-40 header → 110px total -->
       <div class="h-[76px] sm:h-[84px] md:h-[90px] xl:h-[98px] 2xl:h-[110px] shrink-0" />
 
-      <!-- Content -->
+      <!-- Content: Figma 1680 = pt-30, pb-60, gap-36 -->
       <div class="flex flex-1 flex-col justify-end sm:justify-center
                   px-[20px] sm:px-[40px] lg:px-[54px] xl:px-0
                   sm:items-center
-                  pb-[20px] sm:pb-[30px] xl:pb-[40px]
+                  pb-[20px] sm:pb-[30px] xl:pb-[40px] 2xl:pb-[60px]
+                  2xl:pt-[30px]
                   gap-[30px] sm:gap-[36px]">
 
+        <!-- Top section: Figma 1680 = w-1520, gap-46 between title-block and form-row -->
         <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]
-                    flex flex-col gap-[30px] 2xl:gap-[36px]">
+                    flex flex-col gap-[30px] 2xl:gap-[46px]">
 
-          <!-- Title block: Figma 1680 gap=40, 1280 gap=24 -->
+          <!-- Title block: Figma 1680 = gap-40 between title-row and subtitle -->
           <div class="flex flex-col gap-[16px] xs:gap-[24px] 2xl:gap-[40px]
                       w-full sm:w-[400px] xl:w-[420px] 2xl:w-auto">
-            <!-- Title + Badge row: Figma 1680 gap=10 -->
+            <!-- Title + Badge row: Figma 1680 = gap-10 -->
             <div class="flex gap-[4px] sm:gap-[8px] 2xl:gap-[10px] items-center">
-              <!-- Title: Figma 1680=84/70, 1280=70/62, 360=44/40, 320=38/36 -->
-              <p class="font-heading text-white font-extrabold whitespace-pre
+              <!-- Title: Figma 1680 = 84px/70lh, ExtraBold, TWO lines -->
+              <p class="font-heading text-white font-extrabold
                         text-[38px] leading-[36px]
                         xs:text-[44px] xs:leading-[40px]
                         sm:text-[48px] sm:leading-[44px]
                         md:text-[54px] md:leading-[50px]
                         lg:text-[56px] lg:leading-[52px]
                         xl:text-[70px] xl:leading-[62px]
-                        2xl:text-[84px] 2xl:leading-[70px]">Вместе <br />для дикой<br />природы</p>
-              <!-- Badge: Figma 1680=54x54 16px, 1280=48x48 14px, 360=36x36 10.5px -->
-              <div class="flex items-start self-stretch py-[16px] xs:py-[20px] sm:py-[50px]">
+                        2xl:text-[84px] 2xl:leading-[70px]">Вместе<br>для дикой<br class="2xl:hidden"> природы</p>
+              <!-- Badge: Figma 1680 = h-140 py-50, sticker 54x54 p-11.25 r-112.5 -->
+              <div class="flex items-start self-stretch py-[16px] xs:py-[20px] sm:py-[50px]
+                          2xl:h-[140px]">
                 <div class="bg-[#fa0] rounded-full flex items-center justify-center shrink-0
                             size-[30px] p-[6px]
                             xs:size-[36px] xs:p-[7.5px]
@@ -80,17 +85,17 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                 </div>
               </div>
             </div>
-            <!-- Subtitle: Figma 1680 w=659, 24px/30lh. 1280 same. -->
+            <!-- Subtitle: Figma 1680 = 24px/30lh, Bold, single line -->
             <p class="font-heading text-white font-bold whitespace-pre-wrap
                       text-[16px] leading-[20px]
                       xs:text-[18px] xs:leading-[22px]
                       md:text-[20px] md:leading-[26px]
                       xl:text-[24px] xl:leading-[30px]
-                      max-w-full 2xl:max-w-[659px]">Эксперты отобрали редкие виды. <br />Теперь выбор за нами</p>
+                      2xl:whitespace-nowrap">Эксперты отобрали редкие виды. Теперь выбор за нами</p>
           </div>
 
-          <!-- Form + Timer row: Figma 1680 gap=40 between form and timer -->
-          <div class="flex flex-col md:flex-row md:items-center md:gap-[40px] w-full">
+          <!-- Form + Timer row: Figma 1680 = gap-40, items-start -->
+          <div class="flex flex-col md:flex-row md:items-center 2xl:items-start md:gap-[40px] w-full">
             <Transition
               enter-active-class="transition-opacity duration-300"
               enter-from-class="opacity-0"
@@ -98,8 +103,8 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
               leave-to-class="opacity-0"
               mode="out-in"
             >
-              <EmailForm v-if="!submitted" @submit="handleFormSubmit" />
-              <!-- Success: Figma = "Успешно! Мы напомним вам о...", Exo 2 w500 16px/20lh, white -->
+              <EmailForm v-if="!submitted" :error="formError" @submit="handleFormSubmit" />
+              <!-- Success message -->
               <div v-else
                 class="backdrop-blur-[23px] bg-gradient-to-r from-[rgba(122,122,122,0.14)] to-[rgba(115,115,115,0)]
                        border-solid border-[#404040] border-[0.3px] sm:border-[0.5px]
@@ -110,8 +115,8 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                 </p>
               </div>
             </Transition>
-            <!-- Timer: Figma 1680 w=480, aligned center vertically with form -->
-            <div class="hidden md:flex md:items-center">
+            <!-- Timer: Figma 1680 = w-480, self-stretch, centered vertically -->
+            <div class="hidden md:flex md:items-center 2xl:self-stretch">
               <CountdownTimer :target-date="targetDate" />
             </div>
           </div>
@@ -122,7 +127,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
           <CountdownTimer :target-date="targetDate" />
         </div>
 
-        <!-- Cards -->
+        <!-- Cards: Figma 1680 = w-1520 -->
         <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]">
           <AnimalCards :cards="cards" />
         </div>

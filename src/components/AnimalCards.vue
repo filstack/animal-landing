@@ -39,7 +39,7 @@ function scrollRight() {
 
     <Transition enter-active-class="transition-opacity duration-500" enter-from-class="opacity-0">
       <div v-if="!loading">
-        <!-- Mobile ≤767: vertical stack, alternating with/without image (Figma pattern) -->
+        <!-- Mobile ≤767: vertical stack -->
         <div class="flex flex-col gap-[8px] md:hidden">
           <AnimalCard
             v-for="(card, i) in cards"
@@ -52,27 +52,31 @@ function scrollRight() {
 
         <!-- Tablet/Desktop ≥768: horizontal with arrows -->
         <div class="hidden md:block relative">
+          <!-- Figma 1680: cards use flex-1 (equal width), h-240, gap-8 -->
           <div class="flex gap-[8px] overflow-hidden">
             <AnimalCard
               v-for="(card, i) in visibleCards"
               :key="scrollOffset + i"
               v-bind="card"
-              class="shrink-0
-                     w-[340px] h-[196px]
-                     lg:w-[300px] lg:h-[196px]
-                     xl:w-[364px] xl:h-[226px]
-                     2xl:w-[374px] 2xl:h-[240px]"
+              class="shrink-0 flex-1 min-w-0
+                     h-[196px]
+                     xl:h-[226px]
+                     2xl:h-[240px]"
             />
           </div>
 
-          <!-- Navigation arrows -->
-          <div class="absolute top-1/2 -translate-y-1/2 flex items-center justify-between
-                      w-[calc(100%+80px)] -left-[40px]
-                      xl:w-[calc(100%+100px)] xl:-left-[50px]">
+          <!-- Navigation arrows: Figma 1680 = w-1640 centered, size-40 r-30 border-1.25 -->
+          <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2
+                      flex items-center justify-between
+                      w-[calc(100%+80px)]
+                      xl:w-[calc(100%+100px)]
+                      2xl:w-[1640px]">
             <button
               @click="scrollLeft"
               :disabled="scrollOffset === 0"
-              class="size-[32px] 2xl:size-[40px] rounded-[24px] 2xl:rounded-[30px] border border-white flex items-center justify-center
+              class="flex items-center justify-center
+                     size-[32px] rounded-[24px] border border-white
+                     2xl:size-[40px] 2xl:rounded-[30px] 2xl:border-[1.25px] 2xl:p-[7.5px]
                      disabled:opacity-30 hover:bg-white/10 transition-colors bg-black/30"
               aria-label="Назад"
             >
@@ -83,7 +87,9 @@ function scrollRight() {
             <button
               @click="scrollRight"
               :disabled="scrollOffset >= cards.length - 2"
-              class="size-[32px] 2xl:size-[40px] rounded-[24px] 2xl:rounded-[30px] border border-white flex items-center justify-center
+              class="flex items-center justify-center
+                     size-[32px] rounded-[24px] border border-white
+                     2xl:size-[40px] 2xl:rounded-[30px] 2xl:border-[1.25px] 2xl:p-[7.5px]
                      disabled:opacity-30 hover:bg-white/10 transition-colors bg-black/30"
               aria-label="Вперёд"
             >
