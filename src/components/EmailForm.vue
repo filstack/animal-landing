@@ -31,7 +31,7 @@ function handleSubmit() {
            xl:h-[241px] 2xl:h-[250px]"
   >
     <!-- Label + Input wrapper: gap-24 on 2xl -->
-    <div class="flex flex-col gap-[16px] sm:gap-[20px] 2xl:gap-[24px]">
+    <div class="flex flex-col gap-[16px] sm:gap-[20px] xl:gap-[24px]">
       <!-- Label: Figma 1680 = Exo 2 Regular 18px/22lh -->
       <p class="font-heading text-white font-normal whitespace-nowrap
                 text-[12px] leading-[14px]
