@@ -80,9 +80,9 @@ xl:   1280px
 | 1280 (xl) | ✅ done | w-1108, title 70px 3 строки, form w-420 justify-between, 3 cards w-364 |
 | 1024 (lg) | ✅ done | w-916, title 62px, form w-400, timer 100px, 3 cards w-300 |
 | 768 (md) | ✅ done | w-688, title 54px, form w-340 gap-8, timer 76px, 2 cards w-340 |
-| 480 (sm) | pending | мобильный layout |
-| 360 (xs) | pending | мобильный layout |
-| 320 (base) | pending | мобильный layout |
+| 480 (sm) | ✅ done | mobile, form standalone, timer 64px below, vertical cards |
+| 360 (xs) | ✅ done | title 44px, badge 36x36, cards h-220 |
+| 320 (base) | ✅ done | title 32px, badge 30x30, cards h-210, image 140x94 |
 
 ## Команды
 
