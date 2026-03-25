@@ -57,7 +57,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
           <div class="flex flex-col gap-[16px] xs:gap-[24px] 2xl:gap-[40px]
                       w-full sm:w-[400px] lg:w-[400px] xl:w-[420px] 2xl:w-auto">
             <!-- Title + Badge row: Figma 1680 = gap-10 -->
-            <div class="flex gap-[4px] sm:gap-[8px] 2xl:gap-[10px] items-center">
+            <div class="flex gap-[2px] xs:gap-[4px] sm:gap-[8px] 2xl:gap-[10px] items-center">
               <!-- Title: Figma 1680 = 84px/70lh, ExtraBold, TWO lines -->
               <p class="font-heading text-white font-extrabold
                         text-[32px] leading-[30px]
@@ -68,18 +68,18 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                         xl:text-[70px] xl:leading-[62px]
                         2xl:text-[84px] 2xl:leading-[70px]">Вместе<br>для дикой<br class="2xl:hidden"> природы</p>
               <!-- Badge: Figma 1680 = h-140 py-50, sticker 54x54 p-11.25 r-112.5 -->
-              <div class="flex items-start self-stretch py-[16px] xs:py-[20px] sm:py-[34px] md:py-[40px]
+              <div class="flex items-start self-stretch py-[20px] sm:py-[34px] md:py-[40px]
                           lg:py-[50px] 2xl:h-[140px]">
                 <div class="bg-[#fa0] rounded-full flex items-center justify-center shrink-0
                             size-[30px] p-[6.25px]
                             xs:size-[36px] xs:p-[7.5px]
-                            md:size-[40px] md:p-[8.3px]
+                            sm:size-[40px] sm:p-[8.3px]
                             lg:size-[48px] lg:p-[10px]
                             2xl:size-[54px] 2xl:p-[11.25px]">
                   <span class="font-body-tight font-semibold text-white whitespace-nowrap
                                text-[9px] leading-[8px]
                                xs:text-[10.5px] xs:leading-[9.4px]
-                               md:text-[12px] md:leading-[10.5px]
+                               sm:text-[12px] sm:leading-[10.5px]
                                lg:text-[14px] lg:leading-[12.5px]
                                2xl:text-[16px] 2xl:leading-[14px]">скоро</span>
                 </div>
@@ -89,7 +89,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
             <p class="font-heading text-white font-bold whitespace-pre-wrap
                       text-[16px] leading-[20px]
                       xs:text-[18px] xs:leading-[22px]
-                      md:text-[20px] md:leading-[26px]
+                      sm:text-[20px] sm:leading-[26px]
                       lg:text-[22px] lg:leading-[28px]
                       xl:text-[24px] xl:leading-[30px]
                       2xl:whitespace-nowrap">Эксперты отобрали редкие виды. Теперь выбор за нами</p>

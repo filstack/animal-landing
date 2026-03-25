@@ -14,7 +14,6 @@ import logoSvg from '@/assets/logos/vedomosti.svg'
         <a href="/" aria-label="Ведомости — на главную">
           <img :src="logoSvg" alt="Ведомости"
             class="h-[20px] w-[112px]
-                   sm:h-[24px] sm:w-[134px]
                    md:h-[26px] md:w-[145px]
                    2xl:h-[30px] 2xl:w-[167px]" />
         </a>
