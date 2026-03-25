@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import arrowCard from '@/assets/icons/arrow-card.svg'
+
 withDefaults(defineProps<{
   image: string
   title: string
@@ -54,9 +56,7 @@ withDefaults(defineProps<{
       <div class="bg-[#748c43] flex items-center justify-center shrink-0
                   size-[32px] rounded-[24px] p-[6px]
                   2xl:size-[40px] 2xl:rounded-[30px] 2xl:p-[7.5px]">
-        <svg viewBox="0 0 24 24" fill="none" class="w-full h-full">
-          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <img :src="arrowCard" alt="" class="w-full h-full" />
       </div>
     </div>
   </a>
