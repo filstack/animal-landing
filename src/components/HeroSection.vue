@@ -32,7 +32,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
     <div class="absolute inset-0 z-0">
       <img :src="bgDesktop" alt="" class="w-full h-full object-cover object-[70%_center] hidden sm:block" />
       <img :src="bgMobile || bgDesktop" alt=""
-        class="absolute top-0 left-0 w-full h-[680px] xs:h-[733px] object-cover object-[center_top] sm:hidden" />
+        class="absolute top-0 left-0 w-full h-[680px] xs:h-[733px] object-cover object-[60%_top] sm:hidden" />
       <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
       <div class="absolute inset-0 bg-gradient-to-t from-[#1e1e1e] via-[#1e1e1e]/30 to-transparent sm:via-[#1e1e1e]/20" />
     </div>
@@ -69,18 +69,18 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                         2xl:text-[84px] 2xl:leading-[70px]">Вместе<br>для дикой<br class="2xl:hidden"> природы</p>
               <!-- Badge: Figma 1680 = h-140 py-50, sticker 54x54 p-11.25 r-112.5 -->
               <div class="flex items-start self-stretch py-[16px] xs:py-[20px] sm:py-[34px] md:py-[40px]
-                          2xl:h-[140px]">
+                          lg:py-[50px] 2xl:h-[140px]">
                 <div class="bg-[#fa0] rounded-full flex items-center justify-center shrink-0
                             size-[30px] p-[6.25px]
                             xs:size-[36px] xs:p-[7.5px]
                             md:size-[40px] md:p-[8.3px]
-                            xl:size-[48px] xl:p-[10px]
+                            lg:size-[48px] lg:p-[10px]
                             2xl:size-[54px] 2xl:p-[11.25px]">
                   <span class="font-body-tight font-semibold text-white whitespace-nowrap
                                text-[9px] leading-[8px]
                                xs:text-[10.5px] xs:leading-[9.4px]
                                md:text-[12px] md:leading-[10.5px]
-                               xl:text-[14px] xl:leading-[12.5px]
+                               lg:text-[14px] lg:leading-[12.5px]
                                2xl:text-[16px] 2xl:leading-[14px]">скоро</span>
                 </div>
               </div>
