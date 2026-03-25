@@ -62,13 +62,13 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
               <p class="font-heading text-white font-extrabold
                         text-[38px] leading-[36px]
                         xs:text-[44px] xs:leading-[40px]
-                        sm:text-[48px] sm:leading-[44px]
+                        sm:text-[50px] sm:leading-[46px]
                         md:text-[54px] md:leading-[50px]
                         lg:text-[62px] lg:leading-[56px]
                         xl:text-[70px] xl:leading-[62px]
                         2xl:text-[84px] 2xl:leading-[70px]">Вместе<br>для дикой<br class="2xl:hidden"> природы</p>
               <!-- Badge: Figma 1680 = h-140 py-50, sticker 54x54 p-11.25 r-112.5 -->
-              <div class="flex items-start self-stretch py-[16px] xs:py-[20px] sm:py-[50px]
+              <div class="flex items-start self-stretch py-[16px] xs:py-[20px] sm:py-[34px] md:py-[40px]
                           2xl:h-[140px]">
                 <div class="bg-[#fa0] rounded-full flex items-center justify-center shrink-0
                             size-[30px] p-[6px]

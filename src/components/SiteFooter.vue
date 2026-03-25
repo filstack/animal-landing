@@ -80,6 +80,22 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
           </div>
         </div>
 
+        <!-- Mobile social icons (between producer and mobile app, below md) -->
+        <div class="flex items-center gap-[16px] md:hidden">
+          <a href="#" target="_blank" rel="noopener" aria-label="MAX" class="size-[24px] shrink-0">
+            <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="https://vk.com/sto_vidov" target="_blank" rel="noopener" aria-label="ВКонтакте" class="size-[24px] shrink-0">
+            <img :src="iconVk" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="https://dzen.ru/100vidov" target="_blank" rel="noopener" aria-label="Дзен" class="size-[24px] shrink-0">
+            <img :src="iconDzen" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="https://ok.ru/group/70000047830828" target="_blank" rel="noopener" aria-label="Одноклассники" class="size-[24px] shrink-0">
+            <img :src="iconOk" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+          </a>
+        </div>
+
         <!-- ROW 2: Mobile app badges -->
         <div class="flex flex-col gap-[12px] sm:flex-row sm:items-center sm:gap-[20px]
                     2xl:flex-row 2xl:items-center 2xl:gap-[16px]">
@@ -131,7 +147,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
       </div>
 
       <!-- ====== DIVIDER (xl+) ====== -->
-      <div class="hidden md:block md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px] h-px bg-[#5d5d5d]"></div>
+      <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px] h-px bg-[#5d5d5d]"></div>
 
       <!-- ====== SECTION 2 (2xl: two-column legal block below divider) ====== -->
       <!-- On smaller screens: sequential rows as before -->
@@ -181,8 +197,8 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
           </div>
         </div>
 
-        <!-- RIGHT COLUMN (xl+) -->
-        <div class="md:flex-1 font-body-tight text-[#999] font-normal
+        <!-- RIGHT COLUMN (editorial) — on mobile shows first -->
+        <div class="order-first md:order-none md:flex-1 font-body-tight text-[#999] font-normal
                     text-[11px] leading-[13px]
                     md:text-[13px] md:leading-[15.7px]
                     md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
@@ -197,27 +213,6 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
         </div>
       </div>
 
-      <!-- ====== Social icons (below 2xl only) ====== -->
-      <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px]
-                  flex items-center gap-[16px] md:gap-[20px]
-                  md:hidden">
-        <a href="#" target="_blank" rel="noopener" aria-label="MAX"
-           class="size-[24px] md:size-[30px] shrink-0">
-          <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
-        </a>
-        <a href="https://vk.com/sto_vidov" target="_blank" rel="noopener" aria-label="ВКонтакте"
-           class="size-[24px] md:size-[30px] shrink-0">
-          <img :src="iconVk" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
-        </a>
-        <a href="https://dzen.ru/100vidov" target="_blank" rel="noopener" aria-label="Дзен"
-           class="size-[24px] md:size-[30px] shrink-0">
-          <img :src="iconDzen" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
-        </a>
-        <a href="https://ok.ru/group/70000047830828" target="_blank" rel="noopener" aria-label="Одноклассники"
-           class="size-[24px] md:size-[30px] shrink-0">
-          <img :src="iconOk" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
-        </a>
-      </div>
     </div>
   </footer>
 </template>
