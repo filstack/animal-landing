@@ -45,8 +45,8 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
       <div class="flex flex-1 flex-col justify-end sm:justify-center
                   px-[20px] sm:px-[40px] lg:px-0
                   sm:items-center
-                  pb-[20px] sm:pb-[30px] lg:pb-[60px]
-                  lg:pt-[4px] 2xl:pt-[30px]
+                  pb-[20px] sm:pb-[30px] md:pb-[60px]
+                  md:pt-[24px] lg:pt-[4px] 2xl:pt-[30px]
                   gap-[30px] sm:gap-[36px]">
 
         <!-- Top section: Figma 1680 = w-1520, gap-46 between title-block and form-row -->
@@ -96,8 +96,8 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
           </div>
 
           <!-- Form + Timer row: 1280=justify-between, 1680=gap-40 items-start -->
-          <div class="flex flex-col md:flex-row md:items-center md:gap-[40px]
-                      lg:justify-between lg:gap-0 lg:items-start
+          <div class="flex flex-col md:flex-row md:items-start md:gap-[8px]
+                      lg:justify-between lg:gap-0
                       2xl:justify-start 2xl:gap-[40px] w-full">
             <Transition
               enter-active-class="transition-opacity duration-300"
@@ -119,7 +119,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
               </div>
             </Transition>
             <!-- Timer: Figma 1680 = w-480, self-stretch, centered vertically -->
-            <div class="hidden md:flex md:items-center lg:self-stretch">
+            <div class="hidden md:flex md:flex-1 md:self-stretch md:items-center">
               <CountdownTimer :target-date="targetDate" />
             </div>
           </div>

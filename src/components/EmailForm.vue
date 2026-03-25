@@ -28,7 +28,7 @@ function handleSubmit() {
            rounded-[18px] p-[20px]
            flex flex-col gap-[8px]
            w-full md:w-[340px] lg:w-[400px] xl:w-[420px] 2xl:w-[480px]
-           lg:h-[231px] xl:h-[241px] 2xl:h-[250px]"
+           md:h-[232px] lg:h-[231px] xl:h-[241px] 2xl:h-[250px]"
   >
     <!-- Label + Input wrapper: gap-24 on 2xl -->
     <div class="flex flex-col gap-[16px] sm:gap-[20px] xl:gap-[24px]">
@@ -42,7 +42,7 @@ function handleSubmit() {
       </p>
 
       <!-- Input wrapper: Figma 1680 h-71, gap-4, contains input h-52 + message area -->
-      <div class="flex flex-col gap-[4px] lg:h-[62px] xl:h-[71px]">
+      <div class="flex flex-col gap-[4px] md:h-[63px] lg:h-[62px] xl:h-[71px]">
         <div class="relative">
           <input
             v-model="email"

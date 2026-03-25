@@ -32,11 +32,10 @@ const timeLeft = computed(() => {
   <!-- Figma 1680: w-480, self-stretch, text-center, Exo 2 -->
   <div class="flex flex-col gap-[4px] justify-center font-heading
               text-center w-full py-[20px]
-              md:text-left md:py-0
-              lg:text-left
+              md:text-left md:py-0 md:px-[16px] lg:px-0
               2xl:w-[480px] 2xl:text-center">
     <!-- Label: Figma 1680 = Exo 2 Regular 18px/22lh white -->
-    <p class="text-white font-normal w-full lg:indent-[6px] 2xl:indent-0
+    <p class="text-white font-normal w-full md:indent-[2px] lg:indent-[6px] 2xl:indent-0
               text-[12px] leading-[14px]
               sm:text-[14px] sm:leading-[17px]
               md:text-[14px] md:leading-[17px]

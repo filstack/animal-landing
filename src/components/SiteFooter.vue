@@ -18,13 +18,13 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
                 sm:px-[40px] sm:gap-[20px]
                 md:items-center md:px-0 md:gap-[24px]
                 lg:gap-[20px]
-                lg:gap-[60px] lg:items-center">
+                md:gap-[60px] md:items-center">
 
       <!-- ====== SECTION 1 (2xl: top half before divider) ====== -->
       <div class="flex flex-col gap-[20px] xs:gap-[30px] sm:gap-[20px] md:gap-[24px] lg:gap-[20px]
-                  lg:gap-[40px]
+                  md:gap-[40px]
                   w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]
-                  md:items-center lg:items-stretch">
+                  md:items-stretch">
 
         <!-- ROW 1: Partners + Producer + Social icons -->
         <div class="flex flex-col gap-[24px]
@@ -60,7 +60,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
           </div>
 
           <!-- RIGHT: Social icons (on 2xl in row 1; on smaller screens shown below) -->
-          <div class="hidden lg:flex items-center gap-[16px] xl:gap-[20px]">
+          <div class="hidden md:flex items-center gap-[16px] xl:gap-[20px]">
             <a href="#" target="_blank" rel="noopener" aria-label="MAX"
                class="size-[24px] xl:size-[30px] shrink-0">
               <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
@@ -90,7 +90,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
             Мобильное приложение Ведомости:
           </span>
           <!-- Small screens: text-only badges -->
-          <div class="flex gap-[8px] lg:hidden">
+          <div class="flex gap-[8px] md:hidden">
             <a href="https://apps.rustore.ru/app/ru.vedomosti.android" target="_blank" rel="noopener"
                class="h-[24px] px-[8px] rounded-[4px] bg-white/10 flex items-center gap-[4px] hover:bg-white/20 transition-colors">
               <span class="text-white text-[8px] font-medium">RuStore</span>
@@ -109,21 +109,21 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
             </a>
           </div>
           <!-- 2xl: SVG icon badges -->
-          <div class="hidden lg:flex gap-[20px]">
+          <div class="hidden md:flex gap-[20px]">
             <a href="https://apps.rustore.ru/app/ru.vedomosti.android" target="_blank" rel="noopener"
-               class="h-[30px] w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
+               class="h-[24px] w-[67.636px] lg:h-[30px] lg:w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
               <img :src="iconRustore" alt="RuStore" class="h-full w-full" />
             </a>
             <a href="https://apps.apple.com/ru/app/vedomosti/id601656498" target="_blank" rel="noopener"
-               class="h-[30px] w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
+               class="h-[24px] w-[67.636px] lg:h-[30px] lg:w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
               <img :src="iconAppstore" alt="App Store" class="h-full w-full" />
             </a>
             <a href="https://appgallery.huawei.com/app/C101184737" target="_blank" rel="noopener"
-               class="h-[30px] w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
+               class="h-[24px] w-[67.636px] lg:h-[30px] lg:w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
               <img :src="iconHuawei" alt="Huawei AppGallery" class="h-full w-full" />
             </a>
             <a href="https://play.google.com/store/apps/details?id=ru.vedomosti.android" target="_blank" rel="noopener"
-               class="h-[30px] w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
+               class="h-[24px] w-[67.636px] lg:h-[30px] lg:w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
               <img :src="iconGoogleplay" alt="Google Play" class="h-full w-full" />
             </a>
           </div>
@@ -131,27 +131,27 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
       </div>
 
       <!-- ====== DIVIDER (xl+) ====== -->
-      <div class="hidden lg:block lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px] h-px bg-[#5d5d5d]"></div>
+      <div class="hidden md:block md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px] h-px bg-[#5d5d5d]"></div>
 
       <!-- ====== SECTION 2 (2xl: two-column legal block below divider) ====== -->
       <!-- On smaller screens: sequential rows as before -->
       <!-- On 2xl: flex row with gap-120, left col has cookie+reprint+copyright+badge, right col has editorial -->
       <div class="flex flex-col gap-[20px] xs:gap-[30px] sm:gap-[20px] md:gap-[24px] lg:gap-[20px]
                   w-full md:w-[688px] lg:w-[916px] xl:w-[1108px]
-                  lg:flex-row lg:gap-[60px] xl:gap-[120px] lg:items-start
+                  md:flex-row md:gap-[40px] lg:gap-[60px] xl:gap-[120px] md:items-start
                   2xl:w-[1520px]">
 
         <!-- LEFT COLUMN (2xl) -->
-        <div class="flex flex-col gap-[8px] lg:gap-[16px] lg:flex-1">
+        <div class="flex flex-col gap-[8px] md:gap-[16px] md:flex-1">
           <!-- Cookie text -->
           <p class="font-body-tight text-[#999] font-normal
                     text-[11px] leading-[13px]
                     md:text-[13px] md:leading-[15.7px]
-                    lg:text-[13px] lg:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
+                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
             Сайт использует
-            <span class="lg:text-[#d9d9d9]">IP&nbsp;адреса, cookie и&nbsp;данные геолокации</span>
+            <span class="md:text-[#d9d9d9]">IP&nbsp;адреса, cookie и&nbsp;данные геолокации</span>
             Пользователей сайта, условия
-            использования содержатся в&nbsp;<span class="lg:text-[#d9d9d9]"><a href="https://www.vedomosti.ru/info/privacy" class="underline" target="_blank" rel="noopener">Политике в&nbsp;отношении обработки персональных данных</a>
+            использования содержатся в&nbsp;<span class="md:text-[#d9d9d9]"><a href="https://www.vedomosti.ru/info/privacy" class="underline" target="_blank" rel="noopener">Политике в&nbsp;отношении обработки персональных данных</a>
             АО&nbsp;&laquo;Бизнес Ньюс Медиа&raquo;.</span>
           </p>
 
@@ -159,17 +159,17 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
           <p class="font-body-tight text-[#999] font-normal
                     text-[11px] leading-[13px]
                     md:text-[13px] md:leading-[15.7px]
-                    lg:text-[13px] lg:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
+                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
             Любое использование материалов допускается только при соблюдении
-            <span class="lg:text-[#d9d9d9]"><a href="https://www.vedomosti.ru/info/reprint_rules" class="underline" target="_blank" rel="noopener">правил перепечатки</a></span>
-            и&nbsp;при наличии гиперссылки на&nbsp;<span class="lg:text-[#d9d9d9]">vedomosti.ru</span>
+            <span class="md:text-[#d9d9d9]"><a href="https://www.vedomosti.ru/info/reprint_rules" class="underline" target="_blank" rel="noopener">правил перепечатки</a></span>
+            и&nbsp;при наличии гиперссылки на&nbsp;<span class="md:text-[#d9d9d9]">vedomosti.ru</span>
           </p>
 
           <!-- Copyright -->
           <p class="font-body-tight text-[#999] font-normal
                     text-[11px] leading-[13px]
                     md:text-[13px] md:leading-[15.7px]
-                    lg:text-[13px] lg:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
+                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
             Все права защищены &copy;&nbsp;АО&nbsp;Бизнес Ньюс Медиа,
             ИНН/КПП 7712108141/771501001, ОГРН 1027739124775, 127018, г.&nbsp;Москва, вн.тер.г.
             муниципальный округ Марьина Роща, ул.&nbsp;Полковая, д.&nbsp;3, стр.&nbsp;1 1999&mdash;2026
@@ -182,10 +182,10 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
         </div>
 
         <!-- RIGHT COLUMN (xl+) -->
-        <div class="lg:flex-1 font-body-tight text-[#999] font-normal
+        <div class="md:flex-1 font-body-tight text-[#999] font-normal
                     text-[11px] leading-[13px]
                     md:text-[13px] md:leading-[15.7px]
-                    lg:text-[13px] lg:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
+                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
           <!-- On smaller screens this was a single <p> with <br>. Keep that behavior, but for 2xl use mb-[16px] paragraphs -->
           <p class="mb-[16px]">Сетевое издание Ведомости (Vedomosti)</p>
           <p class="mb-[16px]">Решение Федеральной службы по надзору в&nbsp;сфере связи, информационных технологий
@@ -200,7 +200,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
       <!-- ====== Social icons (below 2xl only) ====== -->
       <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px]
                   flex items-center gap-[16px] md:gap-[20px]
-                  lg:hidden">
+                  md:hidden">
         <a href="#" target="_blank" rel="noopener" aria-label="MAX"
            class="size-[24px] md:size-[30px] shrink-0">
           <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
