@@ -27,8 +27,8 @@ function handleSubmit() {
            border-solid border-[#404040] border-[0.3px] sm:border-[0.5px]
            rounded-[18px] p-[20px]
            flex flex-col gap-[8px]
-           w-full md:w-[340px] xl:w-[420px] 2xl:w-[480px]
-           xl:h-[241px] 2xl:h-[250px]"
+           w-full md:w-[340px] lg:w-[400px] xl:w-[420px] 2xl:w-[480px]
+           lg:h-[231px] xl:h-[241px] 2xl:h-[250px]"
   >
     <!-- Label + Input wrapper: gap-24 on 2xl -->
     <div class="flex flex-col gap-[16px] sm:gap-[20px] xl:gap-[24px]">
@@ -42,7 +42,7 @@ function handleSubmit() {
       </p>
 
       <!-- Input wrapper: Figma 1680 h-71, gap-4, contains input h-52 + message area -->
-      <div class="flex flex-col gap-[4px] 2xl:h-[71px]">
+      <div class="flex flex-col gap-[4px] lg:h-[62px] xl:h-[71px]">
         <div class="relative">
           <input
             v-model="email"
@@ -65,7 +65,7 @@ function handleSubmit() {
             type="submit"
             :disabled="!agreedPolicy || !email"
             class="absolute right-[12px] sm:right-[20px] top-1/2 -translate-y-1/2
-                   w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]
+                   w-[24px] h-[24px] sm:w-[32px] sm:h-[32px] lg:w-[24px] lg:h-[24px] xl:w-[32px] xl:h-[32px]
                    flex items-center justify-center
                    disabled:opacity-30 hover:opacity-80 transition-opacity"
             aria-label="Отправить"

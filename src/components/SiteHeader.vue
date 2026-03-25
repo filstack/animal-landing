@@ -7,11 +7,10 @@ import logoSvg from '@/assets/logos/vedomosti.svg'
   <header class="absolute top-0 left-0 w-full z-30">
     <div class="px-[20px] py-[28px]
                 sm:px-[40px] sm:py-[32px]
-                lg:px-[60px]
-                xl:px-0 xl:py-[36px]
-                2xl:py-[40px]
-                xl:flex xl:justify-center">
-      <div class="w-full xl:w-[1108px] 2xl:w-[1520px]">
+                lg:px-0 lg:flex lg:justify-center
+                xl:py-[36px]
+                2xl:py-[40px]">
+      <div class="w-full lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]">
         <a href="/" aria-label="Ведомости — на главную">
           <img :src="logoSvg" alt="Ведомости"
             class="h-[20px] w-[112px]

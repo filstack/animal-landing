@@ -43,10 +43,10 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
 
       <!-- Content: Figma 1680 = pt-30, pb-60, gap-36 -->
       <div class="flex flex-1 flex-col justify-end sm:justify-center
-                  px-[20px] sm:px-[40px] lg:px-[54px] xl:px-0
+                  px-[20px] sm:px-[40px] lg:px-0
                   sm:items-center
-                  pb-[20px] sm:pb-[30px] xl:pb-[60px]
-                  xl:pt-[4px] 2xl:pt-[30px]
+                  pb-[20px] sm:pb-[30px] lg:pb-[60px]
+                  lg:pt-[4px] 2xl:pt-[30px]
                   gap-[30px] sm:gap-[36px]">
 
         <!-- Top section: Figma 1680 = w-1520, gap-46 between title-block and form-row -->
@@ -55,7 +55,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
 
           <!-- Title block: Figma 1680 = gap-40 between title-row and subtitle -->
           <div class="flex flex-col gap-[16px] xs:gap-[24px] 2xl:gap-[40px]
-                      w-full sm:w-[400px] xl:w-[420px] 2xl:w-auto">
+                      w-full sm:w-[400px] lg:w-[400px] xl:w-[420px] 2xl:w-auto">
             <!-- Title + Badge row: Figma 1680 = gap-10 -->
             <div class="flex gap-[4px] sm:gap-[8px] 2xl:gap-[10px] items-center">
               <!-- Title: Figma 1680 = 84px/70lh, ExtraBold, TWO lines -->
@@ -64,7 +64,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                         xs:text-[44px] xs:leading-[40px]
                         sm:text-[48px] sm:leading-[44px]
                         md:text-[54px] md:leading-[50px]
-                        lg:text-[56px] lg:leading-[52px]
+                        lg:text-[62px] lg:leading-[56px]
                         xl:text-[70px] xl:leading-[62px]
                         2xl:text-[84px] 2xl:leading-[70px]">Вместе<br>для дикой<br class="2xl:hidden"> природы</p>
               <!-- Badge: Figma 1680 = h-140 py-50, sticker 54x54 p-11.25 r-112.5 -->
@@ -90,13 +90,14 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                       text-[16px] leading-[20px]
                       xs:text-[18px] xs:leading-[22px]
                       md:text-[20px] md:leading-[26px]
+                      lg:text-[22px] lg:leading-[28px]
                       xl:text-[24px] xl:leading-[30px]
                       2xl:whitespace-nowrap">Эксперты отобрали редкие виды. Теперь выбор за нами</p>
           </div>
 
           <!-- Form + Timer row: 1280=justify-between, 1680=gap-40 items-start -->
           <div class="flex flex-col md:flex-row md:items-center md:gap-[40px]
-                      xl:justify-between xl:gap-0 xl:items-start
+                      lg:justify-between lg:gap-0 lg:items-start
                       2xl:justify-start 2xl:gap-[40px] w-full">
             <Transition
               enter-active-class="transition-opacity duration-300"
@@ -118,7 +119,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
               </div>
             </Transition>
             <!-- Timer: Figma 1680 = w-480, self-stretch, centered vertically -->
-            <div class="hidden md:flex md:items-center xl:self-stretch">
+            <div class="hidden md:flex md:items-center lg:self-stretch">
               <CountdownTimer :target-date="targetDate" />
             </div>
           </div>

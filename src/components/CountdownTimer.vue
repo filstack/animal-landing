@@ -33,10 +33,10 @@ const timeLeft = computed(() => {
   <div class="flex flex-col gap-[4px] justify-center font-heading
               text-center w-full py-[20px]
               md:text-left md:py-0
-              xl:text-left
+              lg:text-left
               2xl:w-[480px] 2xl:text-center">
     <!-- Label: Figma 1680 = Exo 2 Regular 18px/22lh white -->
-    <p class="text-white font-normal w-full xl:indent-[6px] 2xl:indent-0
+    <p class="text-white font-normal w-full lg:indent-[6px] 2xl:indent-0
               text-[12px] leading-[14px]
               sm:text-[14px] sm:leading-[17px]
               md:text-[14px] md:leading-[17px]
@@ -49,7 +49,7 @@ const timeLeft = computed(() => {
               text-[52px] leading-[52px]
               sm:text-[64px] sm:leading-[64px]
               md:text-[76px] md:leading-[68.4px]
-              lg:text-[90px] lg:leading-[0.9]
+              lg:text-[100px] lg:leading-[0.9]
               xl:text-[114px] xl:leading-[0.9]">{{ timeLeft }}</p>
   </div>
 </template>
