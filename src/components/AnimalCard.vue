@@ -31,13 +31,14 @@ withDefaults(defineProps<{
       <div class="flex-1 flex gap-[16px] items-start min-h-0">
         <!-- Figma 1680: Exo 2 Medium 18px/20lh -->
         <p class="flex-1 font-heading text-white font-medium min-h-0 line-clamp-6 pointer-events-none
-                  text-[16px] leading-[18px]
+                  text-[14px] leading-[17px]
+                  xs:text-[16px] xs:leading-[18px]
                   md:text-[14px] md:leading-[17px]
                   xl:text-[16px] xl:leading-[18px]
                   2xl:text-[18px] 2xl:leading-[20px]">
           {{ title }}
         </p>
-        <div v-if="showImage !== false" class="shrink-0 w-[160px] h-[108px] lg:w-[120px] lg:h-[81px] xl:w-[160px] xl:h-[108px] rounded-[16px] overflow-hidden">
+        <div v-if="showImage !== false" class="shrink-0 w-[140px] h-[94px] xs:w-[160px] xs:h-[108px] lg:w-[120px] lg:h-[81px] xl:w-[160px] xl:h-[108px] rounded-[16px] overflow-hidden">
           <img :src="image" :alt="title"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>

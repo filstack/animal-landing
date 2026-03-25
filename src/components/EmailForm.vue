@@ -26,12 +26,12 @@ function handleSubmit() {
     class="backdrop-blur-[23px] bg-gradient-to-r from-[rgba(122,122,122,0.14)] to-[rgba(115,115,115,0)]
            border-solid border-[#404040] border-[0.3px] sm:border-[0.5px]
            rounded-[18px] p-[20px]
-           flex flex-col gap-[8px]
+           flex flex-col gap-[6px] sm:gap-[8px]
            w-full md:w-[340px] lg:w-[400px] xl:w-[420px] 2xl:w-[480px]
            md:h-[232px] lg:h-[231px] xl:h-[241px] 2xl:h-[250px]"
   >
     <!-- Label + Input wrapper: gap-24 on 2xl -->
-    <div class="flex flex-col gap-[16px] sm:gap-[20px] xl:gap-[24px]">
+    <div class="flex flex-col gap-[20px] sm:gap-[24px]">
       <!-- Label: Figma 1680 = Exo 2 Regular 18px/22lh -->
       <p class="font-heading text-white font-normal whitespace-nowrap
                 text-[12px] leading-[14px]

@@ -60,7 +60,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
             <div class="flex gap-[4px] sm:gap-[8px] 2xl:gap-[10px] items-center">
               <!-- Title: Figma 1680 = 84px/70lh, ExtraBold, TWO lines -->
               <p class="font-heading text-white font-extrabold
-                        text-[38px] leading-[36px]
+                        text-[32px] leading-[30px]
                         xs:text-[44px] xs:leading-[40px]
                         sm:text-[50px] sm:leading-[46px]
                         md:text-[54px] md:leading-[50px]
@@ -71,7 +71,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
               <div class="flex items-start self-stretch py-[16px] xs:py-[20px] sm:py-[34px] md:py-[40px]
                           2xl:h-[140px]">
                 <div class="bg-[#fa0] rounded-full flex items-center justify-center shrink-0
-                            size-[30px] p-[6px]
+                            size-[30px] p-[6.25px]
                             xs:size-[36px] xs:p-[7.5px]
                             md:size-[40px] md:p-[8.3px]
                             xl:size-[48px] xl:p-[10px]
