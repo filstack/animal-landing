@@ -28,7 +28,7 @@ function handleSubmit() {
            rounded-[18px] p-[20px]
            flex flex-col gap-[8px]
            w-full md:w-[340px] xl:w-[420px] 2xl:w-[480px]
-           2xl:h-[250px]"
+           xl:h-[241px] 2xl:h-[250px]"
   >
     <!-- Label + Input wrapper: gap-24 on 2xl -->
     <div class="flex flex-col gap-[16px] sm:gap-[20px] 2xl:gap-[24px]">

@@ -58,10 +58,11 @@ function scrollRight() {
               v-for="(card, i) in visibleCards"
               :key="scrollOffset + i"
               v-bind="card"
-              class="shrink-0 flex-1 min-w-0
+              class="shrink-0 min-w-0
                      h-[196px]
-                     xl:h-[226px]
-                     2xl:h-[240px]"
+                     md:w-[340px] lg:w-[300px]
+                     xl:w-[364px] xl:h-[226px]
+                     2xl:w-auto 2xl:flex-1 2xl:h-[240px]"
             />
           </div>
 
@@ -69,7 +70,7 @@ function scrollRight() {
           <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2
                       flex items-center justify-between
                       w-[calc(100%+80px)]
-                      xl:w-[calc(100%+100px)]
+                      xl:w-[1208px]
                       2xl:w-[1640px]">
             <button
               @click="scrollLeft"
