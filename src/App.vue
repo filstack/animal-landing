@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import SiteHeader from './components/SiteHeader.vue'
 import HeroSection from './components/HeroSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import CookieBanner from './components/CookieBanner.vue'
 import type { CardItem } from './components/AnimalCards.vue'
+import { fetchRssCards } from './utils/rss'
 
 import bearDesktop from './assets/bg/bear-desktop.jpg'
 import bearMobile from './assets/bg/bear-mobile.jpg'
@@ -23,32 +25,21 @@ function handleFormSubmit(_payload: { email: string; subscribedToNews: boolean }
   // TODO: CRM-Битрикс integration
 }
 
-const cards: CardItem[] = [
-  {
-    image: bearMobile,
-    title: 'A vibrant green chameleon sitting on a tree branch, looking to the left',
-    date: '03 сентября / 21:54',
-    readTime: '',
-  },
-  {
-    image: eagleMobile,
-    title: 'A vibrant green chameleon sitting on a tree branch, looking to the left',
-    date: '03 сентября / 21:54',
-    readTime: '',
-  },
-  {
-    image: beetleMobile,
-    title: 'A vibrant green chameleon sitting on a tree branch, looking to the left',
-    date: '03 сентября / 21:54',
-    readTime: '',
-  },
-  {
-    image: bearDesktop,
-    title: 'A vibrant green chameleon sitting on a tree branch, looking to the left',
-    date: '03 сентября / 21:54',
-    readTime: '',
-  },
+const fallbackCards: CardItem[] = [
+  { image: bearMobile, title: 'Россияне выберут 100 самых уязвимых краснокнижных видов', date: '16 марта / 11:04', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/articles/2026/03/16/1182989-rossiyane-viberut-100-samih-uyazvimih-krasnoknizhnih-vidov' },
+  { image: eagleMobile, title: 'Численность оседлой популяции дзерена в Забайкалье стабилизировалась', date: '12 марта / 13:02', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/12/1182374-chislennost-osedloi-populyatsii-dzerena-v-zabaikale-stabilizirovalas' },
+  { image: beetleMobile, title: 'Ученые обследовали заказник «Позарым» и получили данные о краснокнижных животных', date: '11 марта / 13:17', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/11/1182073-krasnoknizhnih-zhivotnih' },
+  { image: bearDesktop, title: 'Искусственный интеллект вышел на охрану Дальневосточного морского заповедника', date: '10 марта / 12:51', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/10/1181759-iskusstvennii-intellekt-vishel-na-ohranu-dalnevostochnogo-morskogo-zapovednika' },
 ]
+
+const cards = ref<CardItem[]>(fallbackCards)
+
+onMounted(async () => {
+  const rssCards = await fetchRssCards(10)
+  if (rssCards.length) {
+    cards.value = rssCards
+  }
+})
 </script>
 
 <template>
