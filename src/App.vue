@@ -35,7 +35,7 @@ const fallbackCards: CardItem[] = [
 const cards = ref<CardItem[]>(fallbackCards)
 
 onMounted(async () => {
-  const rssCards = await fetchRssCards(10)
+  const rssCards = await fetchRssCards(4)
   if (rssCards.length) {
     cards.value = rssCards
   }
