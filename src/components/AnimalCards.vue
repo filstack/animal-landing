@@ -60,8 +60,9 @@ function scrollRight() {
               v-bind="card"
               class="shrink-0 min-w-0
                      h-[196px]
-                     md:flex-1 md:h-[196px]
-                     xl:flex-none xl:w-[364px] xl:h-[226px]
+                     md:w-[340px] md:h-[196px]
+                     lg:w-[300px]
+                     xl:w-[364px] xl:h-[226px]
                      2xl:w-auto 2xl:flex-1 2xl:h-[240px]"
             />
           </div>

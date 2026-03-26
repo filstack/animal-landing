@@ -26,7 +26,7 @@ function accept() {
     <div v-if="visible" class="fixed bottom-0 left-0 z-50
                                 w-full
                                 md:bottom-[20px] md:left-1/2 md:-translate-x-1/2
-                                md:w-[688px] lg:w-[914px] xl:w-[1105px]">
+                                md:w-[688px] lg:w-[914px] xl:w-[1105px] 2xl:w-[1520px]">
       <!-- Figma: bg #0f0f0f/90%, blur-5, gradient border -->
       <div class="bg-[#0f0f0f]/90 backdrop-blur-[5px]
                   border-[0.5px] border-[#3f3f3f] 2xl:border-[1px]
