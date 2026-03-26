@@ -95,9 +95,9 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                       2xl:whitespace-nowrap">Эксперты отобрали редкие виды. Теперь выбор за нами</p>
           </div>
 
-          <!-- Form + Timer row: 1280=justify-between, 1680=gap-40 items-start -->
+          <!-- Form + Timer row: md=gap-8 start, lg/xl=justify-between, 2xl=gap-40 start -->
           <div class="flex flex-col md:flex-row md:items-start md:gap-[8px]
-                      lg:justify-between lg:gap-0
+                      lg:justify-between
                       2xl:justify-start 2xl:gap-[40px] w-full">
             <Transition
               enter-active-class="transition-opacity duration-300"
@@ -129,8 +129,8 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                 </p>
               </div>
             </Transition>
-            <!-- Timer: Figma 1680 = w-480, self-stretch, centered vertically -->
-            <div class="hidden md:flex md:flex-1 md:self-stretch md:items-center">
+            <!-- Timer: md=flex-1(FILL), lg/xl=auto(HUG+space-between), 2xl=auto(FIXED w-480) -->
+            <div class="hidden md:flex md:flex-1 lg:flex-initial md:self-stretch md:items-center">
               <CountdownTimer :target-date="targetDate" />
             </div>
           </div>

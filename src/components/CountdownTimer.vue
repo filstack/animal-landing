@@ -29,12 +29,13 @@ const timeLeft = computed(() => {
 </script>
 
 <template>
-  <!-- Figma 1680: w-480, self-stretch, text-center, Exo 2 -->
+  <!-- Timer: md=FILL+px16+left, lg/xl=HUG+left, 2xl=FIXED480+center -->
   <div class="flex flex-col gap-[4px] justify-center font-heading
               text-center w-full py-[20px]
-              md:text-left md:py-0 md:px-[16px] lg:px-0
+              md:text-left md:py-0 md:px-[16px]
+              lg:w-auto lg:px-0
               2xl:w-[480px] 2xl:text-center">
-    <!-- Label: Figma 1680 = Exo 2 Regular 18px/22lh white -->
+    <!-- Label: md=14/17 indent-2, lg=14/17 indent-6, xl=16/18, 2xl=18/22 center -->
     <p class="text-white font-normal w-full md:indent-[2px] lg:indent-[6px] 2xl:indent-0
               text-[12px] leading-[14px]
               sm:text-[14px] sm:leading-[17px]
@@ -43,7 +44,7 @@ const timeLeft = computed(() => {
               2xl:text-[18px] 2xl:leading-[22px]">
       До старта голосования
     </p>
-    <!-- Value: Figma 1680 = 114px, leading-0.9, #fa0 -->
+    <!-- Value: md=76/68.4, lg=100/0.9, xl=114/0.9, 2xl=114/0.9+center -->
     <p class="text-[#ffaa00] w-full
               text-[52px] leading-[52px]
               sm:text-[64px] sm:leading-[64px]
