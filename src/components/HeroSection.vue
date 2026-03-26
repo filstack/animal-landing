@@ -32,7 +32,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
     <div class="absolute inset-0 z-0">
       <img :src="bgDesktop" alt="" class="w-full h-full object-cover object-[70%_center] hidden sm:block" />
       <img :src="bgMobile || bgDesktop" alt=""
-        class="absolute top-0 left-0 w-full h-[680px] xs:h-[733px] object-cover object-[60%_top] sm:hidden" />
+        class="absolute top-0 left-0 w-full h-[560px] xs:h-[680px] object-cover object-[60%_top] sm:hidden" />
       <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
       <div class="absolute inset-0 bg-gradient-to-t from-[#1e1e1e] via-[#1e1e1e]/30 to-transparent sm:via-[#1e1e1e]/20" />
     </div>
@@ -45,13 +45,13 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
       <div class="flex flex-1 flex-col justify-end sm:justify-center
                   px-[20px] sm:px-[40px] lg:px-0
                   sm:items-center
-                  pb-[20px] sm:pb-[60px]
+                  pb-0 md:pb-[60px]
                   md:pt-[24px] lg:pt-[4px] 2xl:pt-[30px]
-                  gap-[36px]">
+                  gap-0 md:gap-[36px]">
 
         <!-- Top section: Figma 1680 = w-1520, gap-46 between title-block and form-row -->
         <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]
-                    flex flex-col gap-[30px] sm:gap-[34px] md:gap-[30px] 2xl:gap-[46px]">
+                    flex flex-col gap-[20px] xs:gap-[30px] sm:gap-[34px] md:gap-[30px] 2xl:gap-[46px]">
 
           <!-- Title block: Figma 1680 = gap-40 between title-row and subtitle -->
           <div class="flex flex-col gap-[16px] xs:gap-[24px] 2xl:gap-[40px]
@@ -136,13 +136,16 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
           </div>
         </div>
 
-        <!-- Mobile timer -->
-        <div class="md:hidden w-full">
+        <!-- Mobile timer: Figma base/xs=full-width py-20, sm=within-parent py-0 -->
+        <div class="md:hidden -mx-[20px] sm:mx-0 mt-[20px] sm:mt-[60px] md:mt-0">
           <CountdownTimer :target-date="targetDate" />
         </div>
 
-        <!-- Cards: Figma 1680 = w-1520 -->
-        <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]">
+        <!-- Cards: Figma base/xs=px-8 pt-20 pb-40, sm=px-40 pt-60 pb-60, md+=w-fixed -->
+        <div class="-mx-[20px] px-[8px] pt-[20px] pb-[40px]
+                    sm:mx-0 sm:px-0 sm:pt-[60px] sm:pb-[60px]
+                    md:mx-0 md:px-0 md:pt-0 md:pb-0
+                    md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]">
           <AnimalCards :cards="cards" />
         </div>
       </div>

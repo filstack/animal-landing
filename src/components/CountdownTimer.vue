@@ -31,7 +31,7 @@ const timeLeft = computed(() => {
 <template>
   <!-- Timer: md=FILL+px16+left, lg/xl=HUG+left, 2xl=FIXED480+center -->
   <div class="flex flex-col gap-[4px] justify-center font-heading
-              text-center w-full py-[20px]
+              text-center w-full py-[20px] sm:py-0
               md:text-left md:py-0 md:px-[16px]
               lg:w-auto lg:px-0
               2xl:w-[480px] 2xl:text-center">

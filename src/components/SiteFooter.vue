@@ -39,7 +39,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
                            2xl:text-[16px] 2xl:leading-[18px]">
                 Партнеры:
               </span>
-              <div class="flex items-center gap-[24px] md:gap-[30px]">
+              <div class="flex items-center gap-[24px]">
                 <a href="https://agencytde.ru/" target="_blank" rel="noopener">
                   <img :src="partnerAtre" alt="АТРЭ"
                     class="h-[32px] w-[66px] md:h-[40px] md:w-[83px] 2xl:h-[48px] 2xl:w-[99.6px] brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
@@ -61,7 +61,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
             </div>
 
             <!-- Social icons (lg+ only, inline with partners row) -->
-            <div class="hidden lg:flex items-center gap-[20px]">
+            <div class="hidden lg:flex items-center gap-[16px] xl:gap-[20px]">
               <a href="https://max.ru/join/SBCJ-wjqwFBh6FSsk4pc3W-zkkGyR3zz41D1VHLpkEg" target="_blank" rel="noopener" aria-label="MAX"
                  class="size-[24px] xl:size-[30px] shrink-0">
                 <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
@@ -107,7 +107,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
                          2xl:text-[16px] 2xl:leading-[18px]">
               Мобильное приложение Ведомости:
             </span>
-            <div class="flex flex-wrap gap-[8px_16px] sm:flex-nowrap sm:gap-[20px]">
+            <div class="flex flex-wrap gap-[8px_16px] sm:flex-nowrap sm:gap-[16px]">
               <a href="https://apps.rustore.ru/app/ru.vedomosti.android" target="_blank" rel="noopener"
                  class="h-[24px] w-[67.636px] lg:h-[30px] lg:w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
                 <img :src="iconRustore" alt="RuStore" class="h-full w-full" />
@@ -130,7 +130,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
 
         <!-- RIGHT COLUMN (md only) - Social icons -->
         <div class="hidden md:flex md:items-start md:justify-end lg:hidden">
-          <div class="flex items-center gap-[20px]">
+          <div class="flex items-center gap-[16px]">
             <a href="https://max.ru/join/SBCJ-wjqwFBh6FSsk4pc3W-zkkGyR3zz41D1VHLpkEg" target="_blank" rel="noopener" aria-label="MAX" class="size-[24px] shrink-0">
               <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
             </a>
