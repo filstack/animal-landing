@@ -101,9 +101,21 @@ xl:   1280px
 
 ### Правки по фидбеку дизайнера (2026-03-26)
 - **Чекбоксы формы**: оба не отмечены по умолчанию (agreedPolicy: false). Figma: Selected=Off
-- **Success-состояние формы**: переделано — иконка-галочка в круге + "Успешно!" + описание, центрировано. Размеры карточки совпадают с формой на каждом брейкпоинте
+- **Success-состояние формы**: вектор-галочка + один текстовый блок font-medium, px-20 py-30, gap-30 (lg:20), размеры текста по Figma (base 14/17 → sm 16/20 → md 14/17 → xl 16/20 → 2xl 18/24)
+- **Error message paddingLeft**: 30px для всех брейкпоинтов (было 20 на base-lg)
+- **Timer layout lg/xl**: flex-initial + w-auto (HUG) вместо flex-1. justify-between позиционирует таймер вправо
+- **Соцсети**: ссылка MAX добавлена (https://max.ru/join/SBCJ-...), md-колонка убран flex-1 (HUG)
 - **Футер**: проверен по Figma node 473:1610 — расхождений нет
 - **Cookie**: проверен по Figma node 485:1997 — расхождений нет
+
+### Ссылки соцсетей
+- MAX: https://max.ru/join/SBCJ-wjqwFBh6FSsk4pc3W-zkkGyR3zz41D1VHLpkEg
+- VK: https://vk.com/sto_vidov
+- Dzen: https://dzen.ru/100vidov
+- OK: https://ok.ru/group/70000047830828
+
+### Паттерн "HUG vs flex-1"
+На lg/xl элементы рядом с формой (таймер, соцсети) в Figma имеют sizing=HUG (по контенту), НЕ FILL. В коде нельзя использовать flex-1 для таких элементов — нужен flex-initial + w-auto. justify-between разводит их по краям.
 
 ### Оставшиеся нюансы (не критичные)
 - lg: showImage чередование на десктопных карточках (дизайнерский выбор)
