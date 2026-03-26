@@ -62,7 +62,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
 
             <!-- Social icons (lg+ only, inline with partners row) -->
             <div class="hidden lg:flex items-center gap-[20px]">
-              <a href="#" target="_blank" rel="noopener" aria-label="MAX"
+              <a href="https://max.ru/join/SBCJ-wjqwFBh6FSsk4pc3W-zkkGyR3zz41D1VHLpkEg" target="_blank" rel="noopener" aria-label="MAX"
                  class="size-[24px] xl:size-[30px] shrink-0">
                 <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
               </a>
@@ -83,7 +83,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
 
           <!-- Mobile social icons (below md) -->
           <div class="flex items-center gap-[20px] md:hidden">
-            <a href="#" target="_blank" rel="noopener" aria-label="MAX" class="size-[24px] shrink-0">
+            <a href="https://max.ru/join/SBCJ-wjqwFBh6FSsk4pc3W-zkkGyR3zz41D1VHLpkEg" target="_blank" rel="noopener" aria-label="MAX" class="size-[24px] shrink-0">
               <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
             </a>
             <a href="https://vk.com/sto_vidov" target="_blank" rel="noopener" aria-label="ВКонтакте" class="size-[24px] shrink-0">
@@ -129,9 +129,9 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
         </div>
 
         <!-- RIGHT COLUMN (md only) - Social icons -->
-        <div class="hidden md:flex md:flex-1 md:items-start md:justify-end lg:hidden">
+        <div class="hidden md:flex md:items-start md:justify-end lg:hidden">
           <div class="flex items-center gap-[20px]">
-            <a href="#" target="_blank" rel="noopener" aria-label="MAX" class="size-[24px] shrink-0">
+            <a href="https://max.ru/join/SBCJ-wjqwFBh6FSsk4pc3W-zkkGyR3zz41D1VHLpkEg" target="_blank" rel="noopener" aria-label="MAX" class="size-[24px] shrink-0">
               <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
             </a>
             <a href="https://vk.com/sto_vidov" target="_blank" rel="noopener" aria-label="ВКонтакте" class="size-[24px] shrink-0">
