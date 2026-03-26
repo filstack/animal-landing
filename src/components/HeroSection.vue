@@ -32,7 +32,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
     <div class="absolute inset-0 z-0">
       <img :src="bgDesktop" alt="" class="w-full h-full object-cover object-[70%_center] hidden sm:block" />
       <img :src="bgMobile || bgDesktop" alt=""
-        class="absolute top-0 left-0 w-full h-[560px] xs:h-[680px] object-cover object-[60%_top] sm:hidden" />
+        class="absolute top-0 left-0 w-full h-[560px] xs:h-[680px] object-cover object-center sm:hidden" />
       <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
       <div class="absolute inset-0 bg-gradient-to-t from-[#1e1e1e] via-[#1e1e1e]/30 to-transparent sm:via-[#1e1e1e]/20" />
     </div>
