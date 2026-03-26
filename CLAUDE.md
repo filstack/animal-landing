@@ -79,10 +79,31 @@ xl:   1280px
 | 1680+ (2xl) | ✅ done | w-1520, title 84px 2 строки, form w-480, 4 cards flex-1 |
 | 1280 (xl) | ✅ done | w-1108, title 70px 3 строки, form w-420 justify-between, 3 cards w-364 |
 | 1024 (lg) | ✅ done | w-916, title 62px, form w-400, timer 100px, 3 cards w-300 |
-| 768 (md) | ✅ done | w-688, title 54px, form w-340 gap-8, timer 76px, 2 cards w-340 |
-| 480 (sm) | ✅ done | mobile, form standalone, timer 64px below, vertical cards |
+| 768 (md) | ✅ done | w-688, title 54px, form w-340 gap-8, timer 76px, 2 cards w-340, image 120x81 |
+| 480 (sm) | ✅ done | mobile, form standalone label 14px, timer 64px below, vertical cards, app badges column |
 | 360 (xs) | ✅ done | title 44px, badge 36x36, cards h-220 |
-| 320 (base) | ✅ done | title 32px, badge 30x30, cards h-210, image 140x94 |
+| 320 (base) | ✅ done | title 32px, badge 30x30 text 8.75px, cards h-210 py-30, image 140x94 |
+
+## Полный аудит pixel-perfect (2026-03-26)
+
+Проведён полный аудит 7 брейкпоинтов через Figma MCP (7 параллельных агентов).
+19 исправлений в 4 файлах. Основные классы фиксов:
+
+- **Footer gaps**: main 60px (было 20), section1 30px (было 20), social 20px (было 16), legal 16px (было 8)
+- **Card py cascade**: base 30→md 24→xl 30 (было base 24→sm 30→lg 24)
+- **Card image md**: 120x81 (было наследование xs 160x108)
+- **Submit button**: right-20, base 24x24, xl 32x32 (было right-12, sm 32x32 ломало md)
+- **Form label sm**: 14px/17lh (было base 12px наследование)
+- **Hero gap**: base 36px (было 30), sm pb 60px (было 30)
+- **Badge text base**: 8.75px/7.84lh (было 9/8)
+- **App badges sm**: always column (было sm:flex-row)
+- **2xl legal leading**: 17px (было leading-normal=21px)
+
+### Оставшиеся нюансы (не критичные)
+- lg: showImage чередование на десктопных карточках (дизайнерский выбор)
+- sm: структурный gap form→timer→cards (Figma ~60px, код 36px flex gap)
+- xs: cards container 320px vs Figma 344px (структурная разница padding)
+- 2xl: backdrop-blur 23px vs Figma radius 46 (Figma radius=diameter, CSS=sigma)
 
 ## Команды
 
