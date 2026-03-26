@@ -26,7 +26,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
                   md:items-start">
 
         <!-- LEFT COLUMN (md) / FULL WIDTH (lg+) -->
-        <div class="flex flex-col gap-[30px] md:gap-[40px] shrink-0">
+        <div class="flex flex-col gap-[30px] md:gap-[40px] shrink-0 w-full">
 
           <!-- ROW 1: Partners + Producer + Social icons (lg+ inline) -->
           <div class="flex flex-col gap-[24px]
