@@ -74,7 +74,7 @@ function handleSubmit() {
           </button>
         </div>
         <!-- Message: always takes space, error doesn't shift layout -->
-        <p class="min-h-[15px] pl-[20px] xl:pl-[30px]
+        <p class="min-h-[15px] pl-[30px]
                   font-body-tight font-light text-[12px] leading-[14.5px]"
            :class="error ? 'text-[#e74c3c]' : 'text-transparent'"
         >{{ error || '&nbsp;' }}</p>
