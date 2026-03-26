@@ -99,16 +99,37 @@ xl:   1280px
 - **App badges sm**: always column (было sm:flex-row)
 - **2xl legal leading**: 17px (было leading-normal=21px)
 
-### Правки по фидбеку дизайнера (2026-03-26)
-- **Чекбоксы формы**: оба не отмечены по умолчанию (agreedPolicy: false). Figma: Selected=Off
-- **Success-состояние формы**: вектор-галочка + один текстовый блок font-medium, px-20 py-30, gap-30 (lg:20), размеры текста по Figma (base 14/17 → sm 16/20 → md 14/17 → xl 16/20 → 2xl 18/24)
-- **Error message paddingLeft**: 30px для всех брейкпоинтов (было 20 на base-lg)
-- **Timer layout lg/xl**: flex-initial + w-auto (HUG) вместо flex-1. justify-between позиционирует таймер вправо
-- **Соцсети**: ссылка MAX добавлена (https://max.ru/join/SBCJ-...), md-колонка убран flex-1 (HUG)
-- **Футер**: проверен по Figma node 473:1610 — расхождений нет
-- **Cookie**: проверен по Figma node 485:1997 — расхождений нет
+### Все фиксы (2026-03-26, хронология)
 
-### Ссылки соцсетей
+**Round 1 — pixel-perfect аудит (7 агентов):**
+- Footer gaps: main 60, section1 30, social per-bp (md/lg=16, xl+=20), legal 16
+- Card py: base 30→md 24→xl 30. Card image md: 120x81. Cards md/lg: fixed w (340/300/364)
+- Submit button: right-20, base 24x24, xl 32x32. Form label sm: 14px
+- Hero gap: base 36. Badge text base: 8.75/7.84. App badges: always column
+- 2xl legal leading: 17px. Partner logos gap: 24px (убран md:30)
+
+**Round 2 — структурный mobile рефакторинг:**
+- Timer/Cards: -mx breakout на mobile (base/xs: timer full-width, cards px-8)
+- sm: timer/cards внутри parent px-40, pt-60 pb-60, timer sm:py-0, mt-60
+- Mobile bg: md:hidden (не sm:hidden!), h-560/xs:680/sm:744
+- Per-theme mobilePos (медведь center 40%, орёл/жук center)
+- Footer left column: w-full (fix justify-between для social справа)
+- Top section gap: base 20, xs 30, sm 34, md 30
+
+**Фидбек дизайнера:**
+- Чекбоксы: оба off (agreedPolicy: false)
+- Success: вектор-галочка + font-medium, px-20 py-30, gap-30 (lg:20)
+- Error message pl: 30px. Cookie: полный редизайн (2 кнопки, #ffaa00, #0f0f0f/90%)
+- Cookie "Подробнее" → ссылка на privacy. Cookie ширина: md:688 lg:914 xl:1105 2xl:1520
+
+### Иконки соцсетей (ВНИМАНИЕ: файлы именованы НАОБОРОТ!)
+
+| Файл | Визуально | Используется для |
+|------|-----------|-----------------|
+| `vk.svg` (iconVk) | 💬 речевой пузырь | **MAX** (max.ru) |
+| `vk-chat.svg` (iconVkChat) | буквы **VK** | **ВКонтакте** (vk.com) |
+
+Ссылки:
 - MAX: https://max.ru/join/SBCJ-wjqwFBh6FSsk4pc3W-zkkGyR3zz41D1VHLpkEg
 - VK: https://vk.com/sto_vidov
 - Dzen: https://dzen.ru/100vidov
@@ -117,11 +138,9 @@ xl:   1280px
 ### Паттерн "HUG vs flex-1"
 На lg/xl элементы рядом с формой (таймер, соцсети) в Figma имеют sizing=HUG (по контенту), НЕ FILL. В коде нельзя использовать flex-1 для таких элементов — нужен flex-initial + w-auto. justify-between разводит их по краям.
 
-### Оставшиеся нюансы (не критичные)
-- lg: showImage чередование на десктопных карточках (дизайнерский выбор)
-- sm: структурный gap form→timer→cards (Figma ~60px, код 36px flex gap)
-- xs: cards container 320px vs Figma 344px (структурная разница padding)
-- 2xl: backdrop-blur 23px vs Figma radius 46 (Figma radius=diameter, CSS=sigma)
+### Статус: готово к отправке заказчику (2026-03-26)
+Проверено на production (animal-weld.vercel.app): все 7 BP, click-test 16 ссылок, 3 темы.
+Осталось: реальные тексты/фото карточек от редакции, CRM-интеграция (Битрикс).
 
 ## Команды
 
