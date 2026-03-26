@@ -13,9 +13,9 @@ import beetleDesktop from './assets/bg/beetle-desktop.jpg'
 import beetleMobile from './assets/bg/beetle-mobile.jpg'
 
 const themes = [
-  { bgDesktop: bearDesktop, bgMobile: bearMobile },
-  { bgDesktop: eagleDesktop, bgMobile: eagleMobile },
-  { bgDesktop: beetleDesktop, bgMobile: beetleMobile },
+  { bgDesktop: bearDesktop, bgMobile: bearMobile, mobilePos: 'center 40%' },
+  { bgDesktop: eagleDesktop, bgMobile: eagleMobile, mobilePos: 'center center' },
+  { bgDesktop: beetleDesktop, bgMobile: beetleMobile, mobilePos: 'center center' },
 ]
 const theme = themes[Math.floor(Math.random() * themes.length)]
 
@@ -59,6 +59,7 @@ const cards: CardItem[] = [
       <HeroSection
         :bg-desktop="theme.bgDesktop"
         :bg-mobile="theme.bgMobile"
+        :mobile-pos="theme.mobilePos"
         :cards="cards"
         target-date="2026-06-01T00:00:00"
         @form-submit="handleFormSubmit"
