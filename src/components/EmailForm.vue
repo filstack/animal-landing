@@ -7,7 +7,7 @@ const props = defineProps<{
 }>()
 
 const email = ref('')
-const agreedPolicy = ref(true)
+const agreedPolicy = ref(false)
 const agreedNews = ref(false)
 
 const emit = defineEmits<{

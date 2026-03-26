@@ -107,15 +107,32 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
               mode="out-in"
             >
               <EmailForm v-if="!submitted" :error="formError" @submit="handleFormSubmit" />
-              <!-- Success message -->
+              <!-- Success message (Figma: Form State=Success) -->
               <div v-else
                 class="backdrop-blur-[23px] bg-gradient-to-r from-[rgba(122,122,122,0.14)] to-[rgba(115,115,115,0)]
                        border-solid border-[#404040] border-[0.3px] sm:border-[0.5px]
                        rounded-[18px] p-[20px]
-                       w-full sm:w-[420px] 2xl:w-[480px]">
-                <p class="font-heading text-white font-medium text-[14px] leading-[18px] sm:text-[16px] sm:leading-[20px]">
-                  Успешно! Мы&nbsp;напомним вам о&nbsp;старте голосования на&nbsp;указанную почту.
-                </p>
+                       w-full md:w-[340px] lg:w-[400px] xl:w-[420px] 2xl:w-[480px]
+                       md:h-[232px] lg:h-[231px] xl:h-[241px] 2xl:h-[250px]
+                       flex flex-col items-center justify-center gap-[16px] text-center">
+                <!-- Check icon -->
+                <div class="size-[48px] sm:size-[56px] rounded-full border border-[#748c43] flex items-center justify-center">
+                  <svg class="size-[24px] sm:size-[28px]" viewBox="0 0 24 24" fill="none" stroke="#748c43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-[8px]">
+                  <p class="font-heading text-white font-bold
+                            text-[18px] leading-[22px]
+                            sm:text-[20px] sm:leading-[24px]
+                            2xl:text-[24px] 2xl:leading-[28px]">Успешно!</p>
+                  <p class="font-heading text-white font-medium
+                            text-[12px] leading-[16px]
+                            sm:text-[14px] sm:leading-[18px]
+                            2xl:text-[16px] 2xl:leading-[20px]">
+                    Мы&nbsp;напомним вам о&nbsp;старте голосования
+                  </p>
+                </div>
               </div>
             </Transition>
             <!-- Timer: Figma 1680 = w-480, self-stretch, centered vertically -->
