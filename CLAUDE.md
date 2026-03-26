@@ -134,7 +134,24 @@ npx vercel --prod --yes  # Deploy to production
 
 ## Правила работы
 
-- **Pixel-perfect**: каждое значение из Figma MCP get_design_context, не интерполировать
-- **Проверка локально**: всегда dev server + Playwright ПЕРЕД деплоем
+- **Pixel-perfect**: каждое значение из Figma MCP, не интерполировать
 - **Коммиты**: локально, без push (push только по запросу)
-- **Ревью**: запускать superpowers:code-reviewer агента для проверки каждого брейкпоинта
+
+### Обязательная верификация (после КАЖДОЙ CSS/layout правки)
+
+1. **Визуальное сравнение**: agent-browser screenshot + Figma get_image → сравнить глазами
+2. **Layout behavior**: проверять не числа, а ПОВЕДЕНИЕ — flex-1 vs auto, justify-*, items-*, visibility breakpoints
+3. **Клик-тест**: проверить ссылки кликом (иконки MAX/VK были перепутаны — файлы именовались обманчиво)
+4. **Нет "косметических" расхождений**: если Figma показывает X, код даёт X. Точка.
+5. **Структурные различия фиксить сразу**: если Figma = отдельные фреймы, а код = один div — это баг, не нюанс
+
+### Частые ловушки (проверять ВСЕГДА)
+
+| Ловушка | Как ловить |
+|---------|-----------|
+| flex-1 vs HUG | Проверять layoutSizingHorizontal и layoutGrow в Figma. HUG = flex-initial + w-auto |
+| items-start ломает ширину | Если parent items-start, дочерние не растягиваются. Нужен w-full |
+| sm:hidden vs md:hidden | Проверять на КАКОМ breakpoint Figma переключает mobile↔desktop элементы |
+| Иконки перепутаны | Проверять визуально что ИКОНКА соответствует ССЫЛКЕ (кликнуть!) |
+| Gap = одинаковый везде? | НЕТ! Проверять gap для КАЖДОГО breakpoint отдельно (social: md=16, xl=20) |
+| Object-position и bg | Разные темы (медведь/орёл/жук) могут требовать разный object-position |
