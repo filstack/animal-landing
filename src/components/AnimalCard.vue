@@ -22,7 +22,7 @@ withDefaults(defineProps<{
            border-solid border-[#404040] border-[0.5px]
            rounded-[18px] overflow-hidden
            flex flex-col gap-[20px]
-           px-[16px] py-[24px] sm:py-[30px] lg:py-[24px] xl:py-[30px]
+           px-[16px] py-[30px] md:py-[24px] xl:py-[30px]
            hover:border-white
            transition-all duration-300 cursor-pointer"
   >
@@ -38,7 +38,7 @@ withDefaults(defineProps<{
                   2xl:text-[18px] 2xl:leading-[20px]">
           {{ title }}
         </p>
-        <div v-if="showImage !== false" class="shrink-0 w-[140px] h-[94px] xs:w-[160px] xs:h-[108px] lg:w-[120px] lg:h-[81px] xl:w-[160px] xl:h-[108px] rounded-[16px] overflow-hidden">
+        <div v-if="showImage !== false" class="shrink-0 w-[140px] h-[94px] xs:w-[160px] xs:h-[108px] md:w-[120px] md:h-[81px] xl:w-[160px] xl:h-[108px] rounded-[16px] overflow-hidden">
           <img :src="image" :alt="title"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>

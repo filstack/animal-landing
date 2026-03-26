@@ -14,20 +14,19 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
 <template>
   <footer class="bg-[#0f0f0f] overflow-hidden">
     <div class="flex flex-col py-[44px]
-                px-[20px] gap-[20px] xs:gap-[30px]
-                sm:px-[40px] sm:gap-[20px]
-                md:items-center md:px-0 md:gap-[60px]
-                2xl:gap-[60px]">
+                px-[20px] gap-[60px]
+                sm:px-[40px]
+                md:items-center md:px-0">
 
       <!-- ====== SECTION 1 ====== -->
-      <div class="flex flex-col gap-[20px] xs:gap-[30px] sm:gap-[20px]
+      <div class="flex flex-col gap-[30px]
                   md:flex-row md:gap-[40px]
                   lg:flex-col lg:gap-[40px]
                   w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]
                   md:items-start">
 
         <!-- LEFT COLUMN (md) / FULL WIDTH (lg+) -->
-        <div class="flex flex-col gap-[20px] xs:gap-[30px] sm:gap-[20px] md:gap-[40px] shrink-0">
+        <div class="flex flex-col gap-[30px] md:gap-[40px] shrink-0">
 
           <!-- ROW 1: Partners + Producer + Social icons (lg+ inline) -->
           <div class="flex flex-col gap-[24px]
@@ -62,7 +61,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
             </div>
 
             <!-- Social icons (lg+ only, inline with partners row) -->
-            <div class="hidden lg:flex items-center gap-[16px] xl:gap-[20px]">
+            <div class="hidden lg:flex items-center gap-[20px]">
               <a href="#" target="_blank" rel="noopener" aria-label="MAX"
                  class="size-[24px] xl:size-[30px] shrink-0">
                 <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
@@ -83,7 +82,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
           </div>
 
           <!-- Mobile social icons (below md) -->
-          <div class="flex items-center gap-[16px] md:hidden">
+          <div class="flex items-center gap-[20px] md:hidden">
             <a href="#" target="_blank" rel="noopener" aria-label="MAX" class="size-[24px] shrink-0">
               <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
             </a>
@@ -99,8 +98,8 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
           </div>
 
           <!-- Mobile app badges -->
-          <div class="flex flex-col gap-[12px] sm:flex-row sm:items-center sm:gap-[20px]
-                      md:flex-col md:items-start md:gap-[12px]
+          <div class="flex flex-col gap-[12px]
+                      md:items-start
                       2xl:gap-[16px]">
             <span class="font-heading text-[#999] font-medium whitespace-nowrap
                          text-[11px] leading-[13px]
@@ -131,7 +130,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
 
         <!-- RIGHT COLUMN (md only) - Social icons -->
         <div class="hidden md:flex md:flex-1 md:items-start md:justify-end lg:hidden">
-          <div class="flex items-center gap-[16px]">
+          <div class="flex items-center gap-[20px]">
             <a href="#" target="_blank" rel="noopener" aria-label="MAX" class="size-[24px] shrink-0">
               <img :src="iconVkChat" alt="" class="w-full h-full brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
             </a>
@@ -160,12 +159,11 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
                   2xl:w-[1520px]">
 
         <!-- LEFT COLUMN (2xl) -->
-        <div class="flex flex-col gap-[8px] md:gap-[16px] md:flex-1">
+        <div class="flex flex-col gap-[16px] md:flex-1">
           <!-- Cookie text -->
           <p class="font-body-tight text-[#999] font-normal
                     text-[11px] leading-[13px]
-                    md:text-[13px] md:leading-[15.7px]
-                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
+                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-[17px]">
             Сайт использует
             <span class="md:text-[#d9d9d9]">IP&nbsp;адреса, cookie и&nbsp;данные геолокации</span>
             Пользователей сайта, условия
@@ -176,8 +174,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
           <!-- Reprint text -->
           <p class="font-body-tight text-[#999] font-normal
                     text-[11px] leading-[13px]
-                    md:text-[13px] md:leading-[15.7px]
-                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
+                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-[17px]">
             Любое использование материалов допускается только при соблюдении
             <span class="md:text-[#d9d9d9]"><a href="https://www.vedomosti.ru/info/reprint_rules" class="underline" target="_blank" rel="noopener">правил перепечатки</a></span>
             и&nbsp;при наличии гиперссылки на&nbsp;<span class="md:text-[#d9d9d9]">vedomosti.ru</span>
@@ -186,8 +183,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
           <!-- Copyright -->
           <p class="font-body-tight text-[#999] font-normal
                     text-[11px] leading-[13px]
-                    md:text-[13px] md:leading-[15.7px]
-                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
+                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-[17px]">
             Все права защищены &copy;&nbsp;АО&nbsp;Бизнес Ньюс Медиа,
             ИНН/КПП 7712108141/771501001, ОГРН 1027739124775, 127018, г.&nbsp;Москва, вн.тер.г.
             муниципальный округ Марьина Роща, ул.&nbsp;Полковая, д.&nbsp;3, стр.&nbsp;1 1999&mdash;2026
@@ -202,8 +198,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
         <!-- RIGHT COLUMN (editorial) — on mobile shows first -->
         <div class="order-first md:order-none md:flex-1 font-body-tight text-[#999] font-normal
                     text-[11px] leading-[13px]
-                    md:text-[13px] md:leading-[15.7px]
-                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-normal">
+                    md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-[17px]">
           <!-- On smaller screens this was a single <p> with <br>. Keep that behavior, but for 2xl use mb-[16px] paragraphs -->
           <p class="mb-[16px]">Сетевое издание Ведомости (Vedomosti)</p>
           <p class="mb-[16px]">Решение Федеральной службы по надзору в&nbsp;сфере связи, информационных технологий

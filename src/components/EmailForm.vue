@@ -35,7 +35,7 @@ function handleSubmit() {
       <!-- Label: Figma 1680 = Exo 2 Regular 18px/22lh -->
       <p class="font-heading text-white font-normal whitespace-nowrap
                 text-[12px] leading-[14px]
-                md:text-[14px] md:leading-[17px]
+                sm:text-[14px] sm:leading-[17px]
                 xl:text-[16px] xl:leading-[18px]
                 2xl:text-[18px] 2xl:leading-[22px]">
         Мы напомним о старте голосования
@@ -64,8 +64,8 @@ function handleSubmit() {
           <button
             type="submit"
             :disabled="!agreedPolicy || !email"
-            class="absolute right-[12px] sm:right-[20px] top-1/2 -translate-y-1/2
-                   w-[24px] h-[24px] sm:w-[32px] sm:h-[32px] lg:w-[24px] lg:h-[24px] xl:w-[32px] xl:h-[32px]
+            class="absolute right-[20px] top-1/2 -translate-y-1/2
+                   w-[24px] h-[24px] xl:w-[32px] xl:h-[32px]
                    flex items-center justify-center
                    disabled:opacity-30 hover:opacity-80 transition-opacity"
             aria-label="Отправить"

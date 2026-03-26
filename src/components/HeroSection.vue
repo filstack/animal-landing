@@ -45,13 +45,13 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
       <div class="flex flex-1 flex-col justify-end sm:justify-center
                   px-[20px] sm:px-[40px] lg:px-0
                   sm:items-center
-                  pb-[20px] sm:pb-[30px] md:pb-[60px]
+                  pb-[20px] sm:pb-[60px]
                   md:pt-[24px] lg:pt-[4px] 2xl:pt-[30px]
-                  gap-[30px] sm:gap-[36px]">
+                  gap-[36px]">
 
         <!-- Top section: Figma 1680 = w-1520, gap-46 between title-block and form-row -->
         <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]
-                    flex flex-col gap-[30px] 2xl:gap-[46px]">
+                    flex flex-col gap-[30px] sm:gap-[34px] md:gap-[30px] 2xl:gap-[46px]">
 
           <!-- Title block: Figma 1680 = gap-40 between title-row and subtitle -->
           <div class="flex flex-col gap-[16px] xs:gap-[24px] 2xl:gap-[40px]
@@ -77,7 +77,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
                             lg:size-[48px] lg:p-[10px]
                             2xl:size-[54px] 2xl:p-[11.25px]">
                   <span class="font-body-tight font-semibold text-white whitespace-nowrap
-                               text-[9px] leading-[8px]
+                               text-[8.75px] leading-[7.84px]
                                xs:text-[10.5px] xs:leading-[9.4px]
                                sm:text-[12px] sm:leading-[10.5px]
                                lg:text-[14px] lg:leading-[12.5px]
