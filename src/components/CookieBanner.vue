@@ -47,8 +47,19 @@ function accept() {
           с&nbsp;<a href="https://www.vedomosti.ru/info/privacy"
                     class="underline font-heading" target="_blank" rel="noopener">Политикой обработки персональных данных</a>.
         </p>
-        <!-- Buttons: vertical on mobile/md, horizontal on lg+ -->
+        <!-- Buttons: Figma order = Подробнее (outlined) + Принять (orange) -->
         <div class="flex flex-col gap-[16px] xs:gap-[16px] md:gap-[10px] lg:flex-row lg:gap-[10px] shrink-0">
+          <a
+            href="https://www.vedomosti.ru/info/privacy"
+            target="_blank" rel="noopener"
+            class="h-[40px] px-[14px] xs:px-[20px] md:h-[48px] md:px-[40px]
+                   rounded-[40px] border border-[#999] bg-transparent
+                   font-heading text-[#999] text-[12px] md:text-[14px] font-medium
+                   hover:bg-white/5 active:scale-95 transition-all whitespace-nowrap
+                   flex items-center justify-center"
+          >
+            Подробнее
+          </a>
           <button
             @click="accept"
             class="h-[40px] px-[14px] xs:px-[14px] sm:px-[20px] md:h-[48px] md:px-[40px]
@@ -57,15 +68,6 @@ function accept() {
                    hover:bg-[#ffaa00]/80 active:scale-95 transition-all whitespace-nowrap"
           >
             Принять
-          </button>
-          <button
-            @click="accept"
-            class="h-[40px] px-[14px] xs:px-[20px] md:h-[48px] md:px-[40px]
-                   rounded-[40px] border border-[#999] bg-transparent
-                   font-heading text-[#999] text-[12px] md:text-[14px] font-medium
-                   hover:bg-white/5 active:scale-95 transition-all whitespace-nowrap"
-          >
-            Настроить
           </button>
         </div>
       </div>
