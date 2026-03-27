@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import EmailForm from './EmailForm.vue'
 import CountdownTimer from './CountdownTimer.vue'
 import AnimalCards from './AnimalCards.vue'
@@ -11,19 +10,17 @@ const props = defineProps<{
   mobilePos?: string
   targetDate?: string
   cards: CardItem[]
+  submitted?: boolean
+  formError?: string
+  formLoading?: boolean
 }>()
 
 const emit = defineEmits<{
-  formSubmit: [payload: { email: string; subscribedToNews: boolean }]
+  formSubmit: [payload: { email: string; agreedPolicy: boolean; subscribedToNews: boolean }]
 }>()
 
-const submitted = ref(false)
-const formError = ref('')
-
-function handleFormSubmit(payload: { email: string; subscribedToNews: boolean }) {
-  formError.value = ''
+function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subscribedToNews: boolean }) {
   emit('formSubmit', payload)
-  submitted.value = true
 }
 </script>
 
@@ -108,7 +105,7 @@ function handleFormSubmit(payload: { email: string; subscribedToNews: boolean })
               leave-to-class="opacity-0"
               mode="out-in"
             >
-              <EmailForm v-if="!submitted" :error="formError" @submit="handleFormSubmit" />
+              <EmailForm v-if="!submitted" :error="formError" :loading="formLoading" @submit="handleFormSubmit" />
               <!-- Success message (Figma: Form State=Success) -->
               <div v-else
                 class="backdrop-blur-[23px] bg-gradient-to-r from-[rgba(122,122,122,0.14)] to-[rgba(115,115,115,0)]

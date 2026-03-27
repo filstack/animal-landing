@@ -4,6 +4,7 @@ import arrowRight from '@/assets/icons/arrow-right.svg'
 
 const props = defineProps<{
   error?: string
+  loading?: boolean
 }>()
 
 const email = ref('')
@@ -11,12 +12,12 @@ const agreedPolicy = ref(false)
 const agreedNews = ref(false)
 
 const emit = defineEmits<{
-  submit: [payload: { email: string; subscribedToNews: boolean }]
+  submit: [payload: { email: string; agreedPolicy: boolean; subscribedToNews: boolean }]
 }>()
 
 function handleSubmit() {
-  if (!email.value || !agreedPolicy.value) return
-  emit('submit', { email: email.value, subscribedToNews: agreedNews.value })
+  if (!email.value || !agreedPolicy.value || props.loading) return
+  emit('submit', { email: email.value, agreedPolicy: agreedPolicy.value, subscribedToNews: agreedNews.value })
 }
 </script>
 
@@ -63,14 +64,15 @@ function handleSubmit() {
           />
           <button
             type="submit"
-            :disabled="!agreedPolicy || !email"
+            :disabled="!agreedPolicy || !email || loading"
             class="absolute right-[20px] top-1/2 -translate-y-1/2
                    w-[24px] h-[24px] xl:w-[32px] xl:h-[32px]
                    flex items-center justify-center
                    disabled:opacity-30 hover:opacity-80 transition-opacity"
             aria-label="Отправить"
           >
-            <img :src="arrowRight" alt="" class="w-full h-full" />
+            <span v-if="loading" class="w-[16px] h-[16px] border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            <img v-else :src="arrowRight" alt="" class="w-full h-full" />
           </button>
         </div>
         <!-- Message: always takes space, error doesn't shift layout -->

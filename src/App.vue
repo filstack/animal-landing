@@ -6,6 +6,7 @@ import SiteFooter from './components/SiteFooter.vue'
 import CookieBanner from './components/CookieBanner.vue'
 import type { CardItem } from './components/AnimalCards.vue'
 import { fetchRssCards } from './utils/rss'
+import { extractUtmParams } from './utils/utm'
 
 import bearDesktop from './assets/bg/bear-desktop.jpg'
 import bearMobile from './assets/bg/bear-mobile.jpg'
@@ -21,8 +22,40 @@ const themes = [
 ]
 const theme = themes[Math.floor(Math.random() * themes.length)]
 
-function handleFormSubmit(_payload: { email: string; subscribedToNews: boolean }) {
-  // TODO: CRM-Битрикс integration
+const formSubmitted = ref(false)
+const formError = ref('')
+const formLoading = ref(false)
+
+async function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subscribedToNews: boolean }) {
+  formError.value = ''
+  formLoading.value = true
+
+  try {
+    const response = await fetch('/api/submit-form', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: payload.email,
+        agreedPolicy: payload.agreedPolicy,
+        subscribedToNews: payload.subscribedToNews,
+        utm: extractUtmParams(),
+        pageUrl: window.location.href,
+      }),
+    })
+
+    const data = await response.json()
+
+    if (!response.ok || !data.success) {
+      formError.value = data.error || 'Произошла ошибка. Попробуйте позже.'
+      return
+    }
+
+    formSubmitted.value = true
+  } catch {
+    formError.value = 'Ошибка сети. Проверьте подключение и попробуйте ещё раз.'
+  } finally {
+    formLoading.value = false
+  }
 }
 
 const fallbackCards: CardItem[] = [
@@ -53,6 +86,9 @@ onMounted(async () => {
         :mobile-pos="theme.mobilePos"
         :cards="cards"
         target-date="2026-06-01T00:00:00"
+        :submitted="formSubmitted"
+        :form-error="formError"
+        :form-loading="formLoading"
         @form-submit="handleFormSubmit"
       />
     </main>
