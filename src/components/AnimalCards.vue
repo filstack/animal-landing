@@ -21,13 +21,14 @@ onMounted(() => {
   setTimeout(() => { loading.value = false }, 1500)
 })
 
+const maxOffset = computed(() => Math.max(0, props.cards.length - 4))
 const visibleCards = computed(() => props.cards.slice(scrollOffset.value, scrollOffset.value + 4))
 
 function scrollLeft() {
   if (scrollOffset.value > 0) scrollOffset.value--
 }
 function scrollRight() {
-  if (scrollOffset.value < props.cards.length - 1) scrollOffset.value++
+  if (scrollOffset.value < maxOffset.value) scrollOffset.value++
 }
 </script>
 
@@ -57,12 +58,10 @@ function scrollRight() {
               v-for="(card, i) in visibleCards"
               :key="scrollOffset + i"
               v-bind="card"
-              class="shrink-0 min-w-0
+              class="shrink-0 min-w-0 flex-1
                      h-[196px]
-                     md:w-[340px] md:h-[196px]
-                     lg:w-[300px]
-                     xl:w-[364px] xl:h-[226px]
-                     2xl:w-auto 2xl:flex-1 2xl:h-[240px]"
+                     xl:h-[226px]
+                     2xl:h-[240px]"
             />
           </div>
 
@@ -89,7 +88,7 @@ function scrollRight() {
             </button>
             <button
               @click="scrollRight"
-              :disabled="scrollOffset >= cards.length - 2"
+              :disabled="scrollOffset >= maxOffset"
               class="flex items-center justify-center pointer-events-auto
                      size-[32px] rounded-[24px] border border-white
                      2xl:size-[40px] 2xl:rounded-[30px] 2xl:border-[1.25px] 2xl:p-[7.5px]
