@@ -8,6 +8,7 @@ const props = defineProps<{
   bgDesktop: string
   bgMobile?: string
   mobilePos?: string
+  mobileTransform?: string
   targetDate?: string
   cards: CardItem[]
   submitted?: boolean
@@ -31,7 +32,7 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
       <img :src="bgDesktop" alt="" class="w-full h-full object-cover object-[70%_center] hidden md:block" />
       <img :src="bgMobile || bgDesktop" alt=""
         class="absolute top-0 left-0 w-full h-[560px] xs:h-[680px] sm:h-[744px] object-cover md:hidden"
-        :style="{ objectPosition: mobilePos || 'center center' }" />
+        :style="{ objectPosition: mobilePos || 'center center', transform: mobileTransform || 'none' }" />
       <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
       <div class="absolute inset-0 bg-gradient-to-t from-[#1e1e1e] via-[#1e1e1e]/30 to-transparent md:via-[#1e1e1e]/20" />
     </div>

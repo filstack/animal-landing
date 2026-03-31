@@ -16,7 +16,7 @@ import beetleDesktop from './assets/bg/beetle-desktop.jpg'
 import beetleMobile from './assets/bg/beetle-mobile.jpg'
 
 const themes = [
-  { bgDesktop: bearDesktop, bgMobile: bearMobile, mobilePos: 'center 40%' },
+  { bgDesktop: bearDesktop, bgMobile: bearMobile, mobilePos: 'center center', mobileTransform: 'scaleY(1.21) translateY(-9%)' },
   { bgDesktop: eagleDesktop, bgMobile: eagleMobile, mobilePos: 'center center' },
   { bgDesktop: beetleDesktop, bgMobile: beetleMobile, mobilePos: 'center center' },
 ]
@@ -59,10 +59,10 @@ async function handleFormSubmit(payload: { email: string; agreedPolicy: boolean;
 }
 
 const fallbackCards: CardItem[] = [
-  { image: '', title: 'Россияне выберут 100 самых уязвимых краснокнижных видов', date: '16 марта / 11:04', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/articles/2026/03/16/1182989-rossiyane-viberut-100-samih-uyazvimih-krasnoknizhnih-vidov?from=100vidov' },
-  { image: '', title: 'Численность оседлой популяции дзерена в Забайкалье стабилизировалась', date: '12 марта / 13:02', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/12/1182374-chislennost-osedloi-populyatsii-dzerena-v-zabaikale-stabilizirovalas?from=100vidov' },
-  { image: '', title: 'Ученые обследовали заказник «Позарым» и получили данные о краснокнижных животных', date: '11 марта / 13:17', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/11/1182073-krasnoknizhnih-zhivotnih?from=100vidov' },
-  { image: '', title: 'Искусственный интеллект вышел на охрану Дальневосточного морского заповедника', date: '10 марта / 12:51', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/10/1181759-iskusstvennii-intellekt-vishel-na-ohranu-dalnevostochnogo-morskogo-zapovednika?from=100vidov' },
+  { image: bearMobile, title: 'Россияне выберут 100 самых уязвимых краснокнижных видов', date: '16 марта / 11:04', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/articles/2026/03/16/1182989-rossiyane-viberut-100-samih-uyazvimih-krasnoknizhnih-vidov?from=100vidov' },
+  { image: eagleMobile, title: 'Численность оседлой популяции дзерена в Забайкалье стабилизировалась', date: '12 марта / 13:02', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/12/1182374-chislennost-osedloi-populyatsii-dzerena-v-zabaikale-stabilizirovalas?from=100vidov' },
+  { image: beetleMobile, title: 'Ученые обследовали заказник «Позарым» и получили данные о краснокнижных животных', date: '11 марта / 13:17', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/11/1182073-krasnoknizhnih-zhivotnih?from=100vidov' },
+  { image: bearDesktop, title: 'Искусственный интеллект вышел на охрану Дальневосточного морского заповедника', date: '10 марта / 12:51', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/10/1181759-iskusstvennii-intellekt-vishel-na-ohranu-dalnevostochnogo-morskogo-zapovednika?from=100vidov' },
 ]
 
 const cards = ref<CardItem[]>(fallbackCards)
@@ -84,6 +84,7 @@ onMounted(async () => {
         :bg-desktop="theme.bgDesktop"
         :bg-mobile="theme.bgMobile"
         :mobile-pos="theme.mobilePos"
+        :mobile-transform="theme.mobileTransform"
         :cards="cards"
         target-date="2026-06-01T00:00:00"
         :submitted="formSubmitted"
