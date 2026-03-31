@@ -1,5 +1,5 @@
 const RSS_URL = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(
-  'https://www.vedomosti.ru/rss/rubric/esg/protection_nature'
+  'https://www.vedomosti.ru/esg/rss/protection_nature/issue'
 )
 
 export interface RssItem {
@@ -54,7 +54,7 @@ export async function fetchRssCards(limit = 10): Promise<{
       title: item.title,
       date: formatRussianDate(item.pubDate),
       readTime: '',
-      href: item.link,
+      href: item.link ? `${item.link}${item.link.includes('?') ? '&' : '?'}from=100vidov` : '',
     }))
   } catch (e) {
     console.error('RSS fetch failed:', e)
