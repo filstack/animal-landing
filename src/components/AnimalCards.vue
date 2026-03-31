@@ -45,7 +45,6 @@ function scrollRight() {
             v-for="(card, i) in cards"
             :key="'m'+i"
             v-bind="card"
-            :show-image="i % 2 === 0"
             class="w-full h-[210px] xs:h-[220px]"
           />
         </div>
@@ -69,7 +68,7 @@ function scrollRight() {
 
           <!-- Navigation arrows: Figma 1680 = w-1640 centered, size-40 r-30 border-1.25 -->
           <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2
-                      flex items-center justify-between
+                      flex items-center justify-between pointer-events-none
                       w-[calc(100%+80px)]
                       md:w-[768px]
                       lg:w-[1000px]
@@ -78,7 +77,7 @@ function scrollRight() {
             <button
               @click="scrollLeft"
               :disabled="scrollOffset === 0"
-              class="flex items-center justify-center
+              class="flex items-center justify-center pointer-events-auto
                      size-[32px] rounded-[24px] border border-white
                      2xl:size-[40px] 2xl:rounded-[30px] 2xl:border-[1.25px] 2xl:p-[7.5px]
                      disabled:opacity-30 hover:bg-white/10 transition-colors bg-black/30"
@@ -91,7 +90,7 @@ function scrollRight() {
             <button
               @click="scrollRight"
               :disabled="scrollOffset >= cards.length - 2"
-              class="flex items-center justify-center
+              class="flex items-center justify-center pointer-events-auto
                      size-[32px] rounded-[24px] border border-white
                      2xl:size-[40px] 2xl:rounded-[30px] 2xl:border-[1.25px] 2xl:p-[7.5px]
                      disabled:opacity-30 hover:bg-white/10 transition-colors bg-black/30"

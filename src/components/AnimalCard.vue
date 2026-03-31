@@ -1,22 +1,21 @@
 <script setup lang="ts">
 import arrowCard from '@/assets/icons/arrow-card.svg'
 
-withDefaults(defineProps<{
+defineProps<{
   image: string
   title: string
   date: string
   readTime: string
   href?: string
-  showImage?: boolean
-}>(), {
-  showImage: true
-})
+}>()
 </script>
 
 <template>
   <!-- Figma 1680: flex-1, h-240, rounded-18, px-16 py-30, gap-20 -->
   <a
     :href="href || '#'"
+    target="_blank"
+    rel="noopener noreferrer"
     class="group block
            backdrop-blur-[23px] bg-gradient-to-r from-[rgba(122,122,122,0.14)] to-[rgba(115,115,115,0)]
            border-solid border-[#404040] border-[0.5px]
@@ -38,7 +37,7 @@ withDefaults(defineProps<{
                   2xl:text-[18px] 2xl:leading-[20px]">
           {{ title }}
         </p>
-        <div v-if="showImage !== false" class="shrink-0 w-[140px] h-[94px] xs:w-[160px] xs:h-[108px] md:w-[120px] md:h-[81px] xl:w-[160px] xl:h-[108px] rounded-[16px] overflow-hidden">
+        <div v-if="image" class="shrink-0 w-[140px] h-[94px] xs:w-[160px] xs:h-[108px] md:w-[120px] md:h-[81px] xl:w-[160px] xl:h-[108px] rounded-[16px] overflow-hidden">
           <img :src="image" :alt="title"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>
