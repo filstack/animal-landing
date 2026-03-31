@@ -65,7 +65,7 @@ function handleSubmit() {
           <button
             type="submit"
             :disabled="!agreedPolicy || !email || loading"
-            class="absolute right-[20px] top-1/2 -translate-y-1/2
+            class="absolute right-[20px] top-1/2 -translate-y-1/2 z-10
                    w-[24px] h-[24px] xl:w-[32px] xl:h-[32px]
                    flex items-center justify-center
                    disabled:opacity-30 hover:opacity-80 transition-opacity"
@@ -108,3 +108,13 @@ function handleSubmit() {
     </div>
   </form>
 </template>
+
+<style scoped>
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+</style>
