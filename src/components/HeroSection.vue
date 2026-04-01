@@ -46,14 +46,14 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
       <!-- Header spacer: Figma 1680 = py-40 header → 110px total -->
       <div class="h-[76px] sm:h-[84px] md:h-[90px] xl:h-[98px] 2xl:h-[110px] shrink-0" />
 
-      <!-- Content: Figma 1680 = pt-30, pb-60, gap-36 -->
-      <div class="flex flex-1 flex-col justify-end
+      <!-- 1st screen: base/xs=justify-end, sm=justify-start+pt-120+pb-60 -->
+      <div class="flex flex-col justify-end sm:justify-start
+                  min-h-[484px] xs:min-h-[604px] sm:min-h-[660px] md:min-h-0 md:flex-1
                   px-[20px] sm:px-[40px] lg:px-0
                   sm:items-center
-                  pt-[54px] xs:pt-[64px] sm:pt-[140px]
-                  pb-0 md:pb-[60px]
-                  md:pt-[24px] lg:pt-[4px] 2xl:pt-[30px]
-                  gap-0 md:gap-[36px]">
+                  pb-[20px] sm:pb-[60px] md:pb-[60px]
+                  sm:pt-[120px] md:pt-[24px] lg:pt-[4px] 2xl:pt-[30px]
+                  gap-[36px]">
 
         <!-- Top section: Figma 1680 = w-1520, gap-46 between title-block and form-row -->
         <div class="w-full md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]
@@ -141,17 +141,20 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Mobile timer: Figma full-width on all mobile breakpoints -->
-        <div class="md:hidden -mx-[20px] sm:-mx-[40px] self-stretch mt-[20px] sm:mt-[60px] md:mt-0">
+      <!-- Below fold: timer + cards (separate from 1st screen, as in Figma) -->
+      <div class="relative z-10 md:hidden px-[20px] sm:px-[40px] py-[20px] sm:py-0">
+        <div class="-mx-[20px] sm:mx-0">
           <CountdownTimer :target-date="targetDate" />
         </div>
+      </div>
 
-        <!-- Cards: Figma base/xs=px-8 pt-20 pb-40, sm=px-40 pt-60 pb-60, md+=w-fixed -->
-        <div class="-mx-[20px] px-[8px] pt-[20px] pb-[40px]
-                    sm:mx-0 sm:px-0 sm:pt-[60px] sm:pb-[60px]
-                    md:mx-0 md:px-0 md:pt-0 md:pb-0
-                    md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]">
+      <div class="relative z-10 md:flex md:justify-center
+                  px-[8px] pt-[20px] pb-[40px]
+                  sm:px-[40px] sm:pt-[60px] sm:pb-[60px]
+                  md:px-0 md:pt-0 md:pb-0">
+        <div class="md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]">
           <AnimalCards :cards="cards" />
         </div>
       </div>
