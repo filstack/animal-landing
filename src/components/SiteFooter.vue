@@ -165,7 +165,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
                     text-[11px] leading-[13px]
                     md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-[17px]">
             Сайт использует
-            <span class="md:text-[#d9d9d9]">IP&nbsp;адреса, cookie и&nbsp;данные геолокации</span>
+            <span class="md:text-[#d9d9d9]"><a href="https://www.vedomosti.ru/info/cookies" class="underline" target="_blank" rel="noopener">IP&nbsp;адреса, cookie и&nbsp;данные геолокации</a></span>
             Пользователей сайта, условия
             использования содержатся в&nbsp;<span class="md:text-[#d9d9d9]"><a href="https://www.vedomosti.ru/info/privacy" class="underline" target="_blank" rel="noopener">Политике в&nbsp;отношении обработки персональных данных</a>
             АО&nbsp;&laquo;Бизнес Ньюс Медиа&raquo;.</span>
@@ -177,7 +177,7 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
                     md:text-[13px] md:leading-[16px] 2xl:text-[14px] 2xl:leading-[17px]">
             Любое использование материалов допускается только при соблюдении
             <span class="md:text-[#d9d9d9]"><a href="https://www.vedomosti.ru/info/reprint_rules" class="underline" target="_blank" rel="noopener">правил перепечатки</a></span>
-            и&nbsp;при наличии гиперссылки на&nbsp;<span class="md:text-[#d9d9d9]">vedomosti.ru</span>
+            и&nbsp;при наличии гиперссылки на&nbsp;<span class="md:text-[#d9d9d9]"><a href="https://www.vedomosti.ru" class="underline" target="_blank" rel="noopener">vedomosti.ru</a></span>
           </p>
 
           <!-- Copyright -->
