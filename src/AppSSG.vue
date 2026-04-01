@@ -20,10 +20,10 @@ const themes = [
 ]
 
 const fallbackCards: CardItem[] = [
-  { image: '', title: 'Россияне выберут 100 самых уязвимых краснокнижных видов', date: '16 марта / 11:04', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/articles/2026/03/16/1182989-rossiyane-viberut-100-samih-uyazvimih-krasnoknizhnih-vidov?from=100vidov' },
-  { image: '', title: 'Численность оседлой популяции дзерена в Забайкалье стабилизировалась', date: '12 марта / 13:02', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/12/1182374-chislennost-osedloi-populyatsii-dzerena-v-zabaikale-stabilizirovalas?from=100vidov' },
-  { image: '', title: 'Ученые обследовали заказник «Позарым» и получили данные о краснокнижных животных', date: '11 марта / 13:17', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/11/1182073-krasnoknizhnih-zhivotnih?from=100vidov' },
-  { image: '', title: 'Искусственный интеллект вышел на охрану Дальневосточного морского заповедника', date: '10 марта / 12:51', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/10/1181759-iskusstvennii-intellekt-vishel-na-ohranu-dalnevostochnogo-morskogo-zapovednika?from=100vidov' },
+  { image: 'https://sharing.vedomosti.ru/1774542418/vedomosti.ru/esg/protection_nature/articles/2026/03/16/1182989-rossiyane-viberut-100-samih-uyazvimih-krasnoknizhnih-vidov.jpg', title: 'Россияне выберут 100 самых уязвимых краснокнижных видов', date: '16 марта / 11:04', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/articles/2026/03/16/1182989-rossiyane-viberut-100-samih-uyazvimih-krasnoknizhnih-vidov?from=100vidov' },
+  { image: 'https://sharing.vedomosti.ru/1773309734/vedomosti.ru/esg/protection_nature/news/2026/03/12/1182374-chislennost-osedloi-populyatsii-dzerena-v-zabaikale-stabilizirovalas.jpg', title: 'Численность оседлой популяции дзерена в Забайкалье стабилизировалась', date: '12 марта / 13:02', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/12/1182374-chislennost-osedloi-populyatsii-dzerena-v-zabaikale-stabilizirovalas?from=100vidov' },
+  { image: 'https://sharing.vedomosti.ru/1773224266/vedomosti.ru/esg/protection_nature/news/2026/03/11/1182073-krasnoknizhnih-zhivotnih.jpg', title: 'Ученые обследовали заказник «Позарым» и получили данные о краснокнижных животных', date: '11 марта / 13:17', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/11/1182073-krasnoknizhnih-zhivotnih?from=100vidov' },
+  { image: 'https://sharing.vedomosti.ru/1773136278/vedomosti.ru/esg/protection_nature/news/2026/03/10/1181759-iskusstvennii-intellekt-vishel-na-ohranu-dalnevostochnogo-morskogo-zapovednika.jpg', title: 'Искусственный интеллект вышел на охрану Дальневосточного морского заповедника', date: '10 марта / 12:51', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/10/1181759-iskusstvennii-intellekt-vishel-na-ohranu-dalnevostochnogo-morskogo-zapovednika?from=100vidov' },
 ]
 </script>
 
@@ -32,7 +32,7 @@ const fallbackCards: CardItem[] = [
     <SiteHeader />
 
     <main>
-      <div v-for="theme in themes" :key="theme.name" :data-ssg-theme="theme.name">
+      <div v-for="(theme, i) in themes" :key="theme.name" :data-ssg-theme="theme.name">
         <HeroSection
           :bg-desktop="theme.bgDesktop"
           :bg-mobile="theme.bgMobile"
@@ -40,6 +40,7 @@ const fallbackCards: CardItem[] = [
           :bg-mobile-sm="theme.bgMobileSm"
           :mobile-pos="theme.mobilePos"
           :cards="fallbackCards"
+          :heading-tag="i === 0 ? 'h1' : 'h2'"
           target-date="2026-06-01T00:00:00"
           :submitted="false"
           form-error=""

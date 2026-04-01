@@ -4,7 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'url'
 
 export default defineConfig({
-  base: '/100vidov/',
   plugins: [vue(), tailwindcss()],
   resolve: {
     alias: {

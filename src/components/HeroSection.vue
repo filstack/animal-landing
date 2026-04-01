@@ -5,7 +5,7 @@ import CountdownTimer from './CountdownTimer.vue'
 import AnimalCards from './AnimalCards.vue'
 import type { CardItem } from './AnimalCards.vue'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   bgDesktop: string
   bgMobile?: string
   bgMobileXs?: string
@@ -16,7 +16,8 @@ const props = defineProps<{
   submitted?: boolean
   formError?: string
   formLoading?: boolean
-}>()
+  headingTag?: 'h1' | 'h2'
+}>(), { headingTag: 'h1' })
 
 const emit = defineEmits<{
   formSubmit: [payload: { email: string; agreedPolicy: boolean; subscribedToNews: boolean }]
@@ -66,14 +67,14 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
             <!-- Title + Badge row: Figma 1680 = gap-10 -->
             <div class="flex gap-[2px] xs:gap-[4px] sm:gap-[8px] 2xl:gap-[10px] items-center">
               <!-- Title: Figma 1680 = 84px/70lh, ExtraBold, TWO lines -->
-              <h1 class="font-heading text-white font-extrabold
+              <component :is="headingTag" class="font-heading text-white font-extrabold
                         text-[32px] leading-[30px]
                         xs:text-[44px] xs:leading-[40px]
                         sm:text-[50px] sm:leading-[46px]
                         md:text-[54px] md:leading-[50px]
                         lg:text-[62px] lg:leading-[56px]
                         xl:text-[70px] xl:leading-[62px]
-                        2xl:text-[84px] 2xl:leading-[70px]">Вместе<br>для дикой<br class="2xl:hidden"> природы</h1>
+                        2xl:text-[84px] 2xl:leading-[70px]">Вместе<br>для дикой<br class="2xl:hidden"> природы</component>
               <!-- Badge: Figma 1680 = h-140 py-50, sticker 54x54 p-11.25 r-112.5 -->
               <div class="flex items-start self-stretch py-[20px] sm:py-[34px] md:py-[40px]
                           lg:py-[50px] 2xl:h-[140px]">
