@@ -142,8 +142,8 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
           </div>
         </div>
 
-        <!-- Mobile timer: Figma base/xs=full-width py-20, sm=within-parent py-0 -->
-        <div class="md:hidden -mx-[20px] sm:mx-0 mt-[20px] sm:mt-[60px] md:mt-0">
+        <!-- Mobile timer: Figma full-width on all mobile breakpoints -->
+        <div class="md:hidden -mx-[20px] sm:-mx-[40px] self-stretch mt-[20px] sm:mt-[60px] md:mt-0">
           <CountdownTimer :target-date="targetDate" />
         </div>
 

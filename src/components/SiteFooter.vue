@@ -108,19 +108,19 @@ import iconGoogleplay from '@/assets/icons/stores/googleplay.png'
               Мобильное приложение Ведомости:
             </span>
             <div class="flex flex-wrap gap-[8px_16px] sm:flex-nowrap sm:gap-[16px]">
-              <a href="https://apps.rustore.ru/app/ru.vedomosti.android" target="_blank" rel="noopener"
+              <a href="https://redirect.appmetrica.yandex.com/serve/101826322610875925" target="_blank" rel="noopener"
                  class="h-[24px] w-[67.636px] lg:h-[30px] lg:w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
                 <img :src="iconRustore" alt="RuStore" class="h-full w-full" />
               </a>
-              <a href="https://apps.apple.com/ru/app/vedomosti/id601656498" target="_blank" rel="noopener"
+              <a href="https://redirect.appmetrica.yandex.com/serve/173883918209080136" target="_blank" rel="noopener"
                  class="h-[24px] w-[67.636px] lg:h-[30px] lg:w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
                 <img :src="iconAppstore" alt="App Store" class="h-full w-full" />
               </a>
-              <a href="https://appgallery.huawei.com/app/C101184737" target="_blank" rel="noopener"
+              <a href="https://redirect.appmetrica.yandex.com/serve/390056699366506369" target="_blank" rel="noopener"
                  class="h-[24px] w-[67.636px] lg:h-[30px] lg:w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
                 <img :src="iconHuawei" alt="Huawei AppGallery" class="h-full w-full" />
               </a>
-              <a href="https://play.google.com/store/apps/details?id=ru.vedomosti.android" target="_blank" rel="noopener"
+              <a href="https://redirect.appmetrica.yandex.com/serve/462114291743470927" target="_blank" rel="noopener"
                  class="h-[24px] w-[67.636px] lg:h-[30px] lg:w-[84.545px] flex items-center justify-center hover:opacity-80 transition-opacity">
                 <img :src="iconGoogleplay" alt="Google Play" class="h-full w-full" />
               </a>
