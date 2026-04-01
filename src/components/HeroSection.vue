@@ -156,7 +156,7 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
       <div class="relative z-10 md:flex md:justify-center
                   px-[8px] pt-[20px] pb-[40px]
                   sm:px-[40px] sm:pt-[60px] sm:pb-[60px]
-                  md:px-0 md:pt-0 md:pb-0">
+                  md:px-0 md:pt-0 md:pb-[60px]">
         <div class="md:w-[688px] lg:w-[916px] xl:w-[1108px] 2xl:w-[1520px]">
           <AnimalCards :cards="cards" />
         </div>
