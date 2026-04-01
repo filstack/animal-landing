@@ -7,5 +7,6 @@ dist
 .playwright-mcp/
 .claude/
 CLAUDE.md
+docs/superpowers/
 figma-refs/
 scripts/
