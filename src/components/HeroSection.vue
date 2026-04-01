@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import EmailForm from './EmailForm.vue'
+import successBadge from '@/assets/icons/success-badge.svg'
 import CountdownTimer from './CountdownTimer.vue'
 import AnimalCards from './AnimalCards.vue'
 import type { CardItem } from './AnimalCards.vue'
@@ -121,10 +122,12 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
                        w-full md:w-[340px] lg:w-[400px] xl:w-[420px] 2xl:w-[480px]
                        md:h-[232px] lg:h-[231px] xl:h-[241px] 2xl:h-[250px]
                        flex flex-col items-center justify-center gap-[30px] lg:gap-[20px] text-center">
-                <!-- Check icon -->
-                <svg class="shrink-0" width="61" height="64" viewBox="0 0 61 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 34L22 51L56 5" stroke="#748c43" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <!-- Success badge icon (Figma: star-shield with checkmark) -->
+                <img :src="successBadge" alt="" class="shrink-0
+                     w-[50px] h-[53px]
+                     sm:w-[60px] sm:h-[63px]
+                     lg:w-[70px] lg:h-[74px]
+                     2xl:w-[80px] 2xl:h-[84px]" />
                 <p class="font-heading text-white font-medium
                           text-[14px] leading-[17px]
                           sm:text-[16px] sm:leading-[20px]
