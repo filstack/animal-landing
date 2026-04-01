@@ -66,14 +66,14 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
             <!-- Title + Badge row: Figma 1680 = gap-10 -->
             <div class="flex gap-[2px] xs:gap-[4px] sm:gap-[8px] 2xl:gap-[10px] items-center">
               <!-- Title: Figma 1680 = 84px/70lh, ExtraBold, TWO lines -->
-              <p class="font-heading text-white font-extrabold
+              <h1 class="font-heading text-white font-extrabold
                         text-[32px] leading-[30px]
                         xs:text-[44px] xs:leading-[40px]
                         sm:text-[50px] sm:leading-[46px]
                         md:text-[54px] md:leading-[50px]
                         lg:text-[62px] lg:leading-[56px]
                         xl:text-[70px] xl:leading-[62px]
-                        2xl:text-[84px] 2xl:leading-[70px]">Вместе<br>для дикой<br class="2xl:hidden"> природы</p>
+                        2xl:text-[84px] 2xl:leading-[70px]">Вместе<br>для дикой<br class="2xl:hidden"> природы</h1>
               <!-- Badge: Figma 1680 = h-140 py-50, sticker 54x54 p-11.25 r-112.5 -->
               <div class="flex items-start self-stretch py-[20px] sm:py-[34px] md:py-[40px]
                           lg:py-[50px] 2xl:h-[140px]">
@@ -93,13 +93,13 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
               </div>
             </div>
             <!-- Subtitle: Figma 1680 = 24px/30lh, Bold, single line -->
-            <p class="font-heading text-white font-bold whitespace-pre-wrap
+            <h2 class="font-heading text-white font-bold whitespace-pre-wrap
                       text-[16px] leading-[20px]
                       xs:text-[18px] xs:leading-[22px]
                       sm:text-[20px] sm:leading-[26px]
                       lg:text-[22px] lg:leading-[28px]
                       xl:text-[24px] xl:leading-[30px]
-                      2xl:whitespace-nowrap">Эксперты отобрали редкие виды. Теперь выбор за нами</p>
+                      2xl:whitespace-nowrap">Эксперты отобрали редкие виды. Теперь выбор за нами</h2>
           </div>
 
           <!-- Form + Timer row: md=gap-8 start, lg/xl=justify-between, 2xl=gap-40 start -->

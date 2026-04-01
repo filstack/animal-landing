@@ -14,7 +14,8 @@ const props = defineProps<{
   cards: CardItem[]
 }>()
 
-const loading = ref(true)
+const isSSR = typeof window === 'undefined'
+const loading = ref(!isSSR)
 const scrollOffset = ref(0)
 const visibleCount = ref(4)
 

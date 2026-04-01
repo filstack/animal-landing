@@ -2,6 +2,7 @@
 import SiteHeader from './components/SiteHeader.vue'
 import HeroSection from './components/HeroSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
+import type { CardItem } from './components/AnimalCards.vue'
 
 import bearDesktop from './assets/bg/bear-desktop.jpg'
 import bearMobile from './assets/bg/bear-mobile.jpg'
@@ -17,6 +18,13 @@ const themes = [
   { name: 'eagle', bgDesktop: eagleDesktop, bgMobile: eagleMobile, mobilePos: 'center center' },
   { name: 'beetle', bgDesktop: beetleDesktop, bgMobile: beetleMobile, mobilePos: 'center center' },
 ]
+
+const fallbackCards: CardItem[] = [
+  { image: '', title: 'Россияне выберут 100 самых уязвимых краснокнижных видов', date: '16 марта / 11:04', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/articles/2026/03/16/1182989-rossiyane-viberut-100-samih-uyazvimih-krasnoknizhnih-vidov?from=100vidov' },
+  { image: '', title: 'Численность оседлой популяции дзерена в Забайкалье стабилизировалась', date: '12 марта / 13:02', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/12/1182374-chislennost-osedloi-populyatsii-dzerena-v-zabaikale-stabilizirovalas?from=100vidov' },
+  { image: '', title: 'Ученые обследовали заказник «Позарым» и получили данные о краснокнижных животных', date: '11 марта / 13:17', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/11/1182073-krasnoknizhnih-zhivotnih?from=100vidov' },
+  { image: '', title: 'Искусственный интеллект вышел на охрану Дальневосточного морского заповедника', date: '10 марта / 12:51', readTime: '', href: 'https://www.vedomosti.ru/esg/protection_nature/news/2026/03/10/1181759-iskusstvennii-intellekt-vishel-na-ohranu-dalnevostochnogo-morskogo-zapovednika?from=100vidov' },
+]
 </script>
 
 <template>
@@ -31,7 +39,7 @@ const themes = [
           :bg-mobile-xs="theme.bgMobileXs"
           :bg-mobile-sm="theme.bgMobileSm"
           :mobile-pos="theme.mobilePos"
-          :cards="[]"
+          :cards="fallbackCards"
           target-date="2026-06-01T00:00:00"
           :submitted="false"
           form-error=""
