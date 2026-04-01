@@ -7,8 +7,9 @@ import type { CardItem } from './AnimalCards.vue'
 const props = defineProps<{
   bgDesktop: string
   bgMobile?: string
+  bgMobileXs?: string
+  bgMobileSm?: string
   mobilePos?: string
-  mobileTransform?: string
   targetDate?: string
   cards: CardItem[]
   submitted?: boolean
@@ -30,9 +31,13 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
     <!-- Background -->
     <div class="absolute inset-0 z-0">
       <img :src="bgDesktop" alt="" class="w-full h-full object-cover object-[70%_center] hidden md:block" />
-      <img :src="bgMobile || bgDesktop" alt=""
-        class="absolute top-0 left-0 w-full h-[560px] xs:h-[680px] sm:h-[744px] object-cover md:hidden"
-        :style="{ objectPosition: mobilePos || 'center center', transform: mobileTransform || 'none' }" />
+      <picture class="md:hidden">
+        <source v-if="bgMobileSm" :srcset="bgMobileSm" media="(min-width: 480px)" />
+        <source v-if="bgMobileXs" :srcset="bgMobileXs" media="(min-width: 360px)" />
+        <img :src="bgMobile || bgDesktop" alt=""
+          class="absolute top-0 left-0 w-full h-[560px] xs:h-[680px] sm:h-[744px] object-cover"
+          :style="{ objectPosition: mobilePos || 'center center' }" />
+      </picture>
       <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
       <div class="absolute inset-0 bg-gradient-to-t from-[#1e1e1e] via-[#1e1e1e]/30 to-transparent md:via-[#1e1e1e]/20" />
     </div>
@@ -42,9 +47,10 @@ function handleFormSubmit(payload: { email: string; agreedPolicy: boolean; subsc
       <div class="h-[76px] sm:h-[84px] md:h-[90px] xl:h-[98px] 2xl:h-[110px] shrink-0" />
 
       <!-- Content: Figma 1680 = pt-30, pb-60, gap-36 -->
-      <div class="flex flex-1 flex-col justify-end sm:justify-center
+      <div class="flex flex-1 flex-col justify-end
                   px-[20px] sm:px-[40px] lg:px-0
                   sm:items-center
+                  pt-[54px] xs:pt-[64px] sm:pt-[140px]
                   pb-0 md:pb-[60px]
                   md:pt-[24px] lg:pt-[4px] 2xl:pt-[30px]
                   gap-0 md:gap-[36px]">

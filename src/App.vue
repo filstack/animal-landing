@@ -10,13 +10,15 @@ import { extractUtmParams } from './utils/utm'
 
 import bearDesktop from './assets/bg/bear-desktop.jpg'
 import bearMobile from './assets/bg/bear-mobile.jpg'
+import bearMobileXs from './assets/bg/bear-mobile-xs.jpg'
+import bearMobileSm from './assets/bg/bear-mobile-sm.jpg'
 import eagleDesktop from './assets/bg/eagle-desktop.jpg'
 import eagleMobile from './assets/bg/eagle-mobile.jpg'
 import beetleDesktop from './assets/bg/beetle-desktop.jpg'
 import beetleMobile from './assets/bg/beetle-mobile.jpg'
 
 const themes = [
-  { bgDesktop: bearDesktop, bgMobile: bearMobile, mobilePos: 'center center', mobileTransform: 'scaleY(1.21) translateY(-9%)' },
+  { bgDesktop: bearDesktop, bgMobile: bearMobile, bgMobileXs: bearMobileXs, bgMobileSm: bearMobileSm, mobilePos: 'center center' },
   { bgDesktop: eagleDesktop, bgMobile: eagleMobile, mobilePos: 'center center' },
   { bgDesktop: beetleDesktop, bgMobile: beetleMobile, mobilePos: 'center center' },
 ]
@@ -83,8 +85,9 @@ onMounted(async () => {
       <HeroSection
         :bg-desktop="theme.bgDesktop"
         :bg-mobile="theme.bgMobile"
+        :bg-mobile-xs="theme.bgMobileXs"
+        :bg-mobile-sm="theme.bgMobileSm"
         :mobile-pos="theme.mobilePos"
-        :mobile-transform="theme.mobileTransform"
         :cards="cards"
         target-date="2026-06-01T00:00:00"
         :submitted="formSubmitted"
