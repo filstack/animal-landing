@@ -1,6 +1,4 @@
-const RSS_URL = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(
-  'https://www.vedomosti.ru/esg/rss/protection_nature/issue'
-)
+const RSS_URL = '/api/rss'
 
 export interface RssItem {
   title: string
