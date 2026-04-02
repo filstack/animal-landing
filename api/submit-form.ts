@@ -32,7 +32,7 @@ async function bitrixCall(method: string, params: Record<string, unknown>): Prom
     throw new Error(`Bitrix API HTTP ${response.status}`)
   }
 
-  const data = await response.json()
+  const data = await response.json() as { error?: string; error_description?: string; result?: unknown }
 
   if (data.error) {
     throw new Error(`Bitrix API error: ${data.error_description || data.error}`)
